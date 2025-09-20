@@ -1,0 +1,15 @@
+/* Css box model */
+*{
+    margin: 0px;
+}
+h1{
+    background-color: aqua;
+    /* height: 40px; */
+    width: 144px;
+    border-top: 10px solid black;
+    border-bottom: 10px solid orange;
+    border-left: 10px solid green;
+    border-right: 10px solid pink;
+    padding: 0px 20px 0px 20px;
+    margin: 10px 20px 10px 20px;
+}
