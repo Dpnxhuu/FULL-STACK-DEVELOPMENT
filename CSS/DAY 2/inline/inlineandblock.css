@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+h1{
+    background-color: #ff0606;
+    height: 100px;
+    width: 200px;
+    border: 10px solid blue;
+    box-sizing: content-box;
+    margin: 20px;
+    padding: 20px;
+    display: inline-block;
+}
+h2{
+    background-color: aqua;
+    height: 100px;
+    width: 200px;
+    display: inline-block;
+    border: 10px solid green;
+    box-sizing: border-box;
+    margin: 20px;
+    padding: 20px;
+}
+span{
+        /* background-color: aqua; */
+        color: #ff0606;
+        /* height: 100px;
+        width: 100px; */
+        padding: 20px;
+        margin: 20px;
+}
