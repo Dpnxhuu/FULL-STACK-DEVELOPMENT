@@ -1,4 +1,32 @@
-h1{
-    border: 10px red solid;
+
+            /* CSS box mode */
+h1
+{
+    background-color: aquamarine;
+    color: rgb(32, 32, 235);
+    height: 200px;
+    width: 200px;
+    /* border-style: solid;
+    border-width: 10px;
+    border-color: blac; */
+    border: solid 10px black;
     padding: 10px;
+    margin: 20px;
+    border-radius: 30px;
 }
+
+h2{
+    background-color: green ;
+    height: 200px;
+    width: 200px;
+    padding: 10px;
+    border: solid 10px orange;
+    margin: 10px;
+}
+
+p{
+    border: solid 5px red;
+    padding: 10px;
+    margin: 20px;
+}
+
