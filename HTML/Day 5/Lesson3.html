@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 3</title>
+  </head>
+  <body>
+    <img src="./3.png" alt="Lesson 3" width="1500px" />
+    <hr>
+
+    <fieldset>
+      <header>
+        <legend>
+          <h1><mark>HTML Nested Lists & Tables</mark></h1>
+        </legend>
+      </header>
+
+      <br />
+      <fieldset>
+        <legend>
+          <h2>1.Nested Lists</h2>
+        </legend>
+        <p>
+          A nested list in HTML is a list that contains another list within one
+          of its list items. This is a powerful way to create a hierarchical or
+          multi-level structure for your content. The key to creating a nested
+          list is to place the child list {either <<strong>ul</strong>> or
+          <<strong>ol</strong>> } inside a <<strong>li</strong>> element of the
+          parent list.
+        </p>
+        <p>
+          For example, you could have an unordered list of "Courses" and within
+          a list item for "Web Development," you could nest another ordered list
+          for "HTML," "CSS," and "JavaScript". This structure makes the
+          relationship between the items clear and is commonly used for things
+          like navigation menus and outlines.
+        </p>
+        <p>
+          Nested Lists A nested list in HTML is a list that contains another
+          list within one of its list items. This is a powerful way to create a
+          hierarchical or multi-level structure for your content. The key to
+          creating a nested list is to place the child list (either
+          <<strong>ul</strong>> or <<strong>ol</strong>> ) inside a
+          <<strong>li</strong>> element of the parent list. For example, you
+          could have an unordered list of "Courses" and within a list item for
+          "Web Development," you could nest another ordered list for "HTML,"
+          "CSS," and "JavaScript." This structure makes the relationship between
+          the items clear and is commonly used for things like navigation menus
+          and outlines. It is important to remember that the nested list should
+          be a child of a list item <<strong>li</strong>> and not a direct child
+          of the parent list {<<strong>ul</strong>> or <<strong>ol</strong>> }.
+          This is a common mistake and will cause validation errors and
+          unpredictable rendering.
+        </p>
+        <img
+          src="https://files.codingninjas.in/article_images/nested-list-in-html-2-1735737619.webp"
+          alt="example"
+          height="400px"
+        />
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend>
+          <h2>2.Tables</h2>
+        </legend>
+        <p>
+          HTML tables are used to present tabular data, which is information
+          organized in a two-dimensional grid of rows and columns. They are
+          designed for data that would be suitable for a spreadsheet, such as
+          financial reports, schedules, or product comparisons.
+        </p>
+        <p>
+          The basic structure of an HTML table consists of the (table) element,
+          which acts as the main container. Inside the table, you use
+          <<strong>tr</strong>> elements to define table rows. Within each row,
+          <<strong>th</strong>> elements are used for table headers (which are
+          usually bold and centered by default) and <<strong>td</strong>>
+          elements are used for standard table data cells.
+        </p>
+        <p>
+          Tables can also include more complex elements like
+          <<strong>thead</strong>>, <<strong>tbody</strong>>, and
+          <<strong>tfoot</strong>> to semantically group the header, body, and
+          footer of the table. You can also use the <strong>colspan</strong> and
+          <strong>rowspan</strong> attributes on <<strong>th</strong>> or
+          <<strong>td</strong>> elements to make a single cell span across
+          multiple columns or rows, which is useful for creating more complex
+          layouts within the table.
+        </p>
+        <img
+          src="https://dotnettutorials.net/wp-content/uploads/2021/11/word-image-533.png"
+          alt="table example"
+          width="400px"
+        />
+      </fieldset>
+      <br>
+      <footer>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <tr> 
+            <td><a href="./Lesson2.html">⬅️ Lesson 2</a></td>
+            <td><a href="./index.html">🏠 Home</a></td>
+            <td><a href="./Lesson4.html">Lesson 4 ➡️</a></td>
+            <td><p>&copy; 2025 Coder Army. Keep Learning, Keep Coding!</td>
+          </tr>
+        </table>
+      </footer>
+    </fieldset>
+  </body>
+</html>

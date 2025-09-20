@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 6</title>
+  </head>
+  <body>
+    <img src="./6.png" alt="Lesson 6" width="1500px" />
+    <hr />
+
+    <fieldset>
+      <header>
+        <legend>
+          <h1>
+            <mark
+              >Deploy Your First Project | Media Tag | Multi Page Website</mark
+            >
+          </h1>
+        </legend>
+      </header>
+
+      <br />
+      <fieldset>
+        <legend>
+          <h2>Part 1: The Basics - Getting a Video on the Page</h2>
+
+        </legend>
+
+        <video controls autoplay muted width="540px">
+            <source src="https://cdn.pixabay.com/video/2016/10/21/6047-188286517_tiny.mp4" type="video/mp4">
+        </video>
+
+        <p>
+          The star of the show is the <strong>video</strong> tag. At its
+          simplest, it just needs to know the source of the video file.
+        </p>
+        <img
+          src="https://img.uxcel.com/cdn-cgi/image/format=auto/practices/video-element-1615470213713/a-1664528873610-2x.jpg"
+          alt="video tag syntax"
+          height="240px"
+        />
+
+        <ul>
+          <li><h3>The controls Attribute: The Magic Switch</h3></li>
+        </ul>
+        <p>
+          The controls attribute is a boolean attribute. You don't need to set
+          it to a value (controls="true" is unnecessary); its mere presence
+          turns the feature on.
+        </p>
+        <p>
+          Result: You now have a fully functional video player on your page,
+          complete with a play/pause button, a timeline scrubber, volume
+          controls, and a fullscreen option. This is the simplest, most
+          effective way to embed a video.
+        </p>
+        <ul>
+          <li><h3>Autoplay</h3></li>
+        </ul>
+        <p>
+          This attribute will make the video start playing as soon as the page
+          loads. code Html CRITICAL CAVEAT: Modern browsers (Chrome, Safari,
+          Firefox) will block autoplay with sound because it's a terrible user
+          experience. To make autoplay work, you almost always have to add the
+          muted attribute as well.
+        </p>
+        <ul>
+          <li><h3>loop</h3></li>
+        </ul>
+        <p>
+          Makes the video automatically restart from the beginning when it
+          finishes. Great for background videos.
+        </p>
+        <img src="https://cdn.hashnode.com/res/hashnode/image/upload/v1627161163655/eGAmXuwNk.png?auto=compress,format&format=webp" alt="video tag img" width="540px">
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend><h2>Part 2: The audio Tag</h2></legend>
+        <br>
+        <img src="https://raw.githubusercontent.com/Codecademy/docs/main/media/html-audio-element-example.png" alt="audio tag img" width="340px">
+        <p>
+          The good news is that the <strong>audio</strong> tag works almost
+          identically to the <strong>video</strong> tag, just without the visual
+          component.
+        </p>
+        <p>
+          <strong>The Problem:</strong> How do we embed a sound file (like a song or a
+          podcast) with player controls?
+          <br> 
+          <strong>The Solution:</strong> Use the <strong>audio</strong> tag with the controls attribute.
+        </p>
+
+        <img src="https://samanthaming.gumlet.io/tidbits/82-html-audio-tag.jpg.gz?format=auto" alt="audio syntax img" width="340px">
+        <p>Result: A clean audio player with play/pause, a timeline, and volume controls. It uses the same attributes like autoplay, loop, and muted.</p>
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend><h2>3.HTML Entities</h2></legend>
+        <img src="./entities.png" alt="entities cheat sheet img" height="540px">
+      </fieldset>
+      <br>
+      <footer>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <tr> 
+            <td><a href="./Lesson5.html">⬅️ Lesson 5</a></td>
+            <td><a href="./index.html">🏠 Home</a></td>
+            <td><p>&copy; 2025 Coder Army. Keep Learning, Keep Coding!</td>
+          </tr>
+        </table>
+      </footer>
+    </fieldset>
+  </body>
+</html>

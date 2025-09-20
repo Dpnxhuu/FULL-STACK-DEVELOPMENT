@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lesson 4</title>
+  </head>
+  <body>
+    <img src="./4.png" alt="Lesson 4" width="1500px" />
+    <hr>
+    <fieldset>
+      <header>
+        <legend>
+          <h1>
+            <mark>
+              File Path in HTML | HTML BoilerPlate Code | DIV + Class +ID
+            </mark>
+          </h1>
+        </legend>
+      </header>
+
+      <br />
+      <fieldset>
+        <legend><h2>1.File Path System</h2></legend>
+        <h3>Step 1: The First Principle (The Fundamental Truth)</h3>
+        <p>
+          The most fundamental truth is this: A website is not one single file.
+          It's a collection of different files (HTML, CSS, JavaScript, images,
+          videos, fonts) that all need to work together. These files are
+          organized into folders, just like documents on your computer.
+        </p>
+        <h3>Step 2: The Core Problem</h3>
+        <p>
+          Now we have a core problem: If your index.html file needs to display
+          an image named logo.png, how does the HTML file tell the browser where
+          to find logo.png? You can't just say src="logo.png" and expect it to
+          work every time. What if the logo is in an images folder? What if it's
+          on a completely different website? The browser needs an exact,
+          unambiguous address to locate the file. A file path is that address.
+        </p>
+        <h3>A. Relative File Paths (The Most Important for Your Projects)</h3>
+        <p>
+          A relative file path gives directions to a file starting from the
+          location of the file you are currently in. You will use this 99% of
+          the time for linking your own files together (images, CSS, other HTML
+          pages).
+        </p>
+        <img
+          src="./relative path.png"
+          alt="Relative path example"
+          width="700px"
+        />
+        <p>Here are the different scenarios:</p>
+        <ul type="none">
+          <li>
+            <strong>Scenario 1:</strong> Linking to a file in the SAME folder.
+          </li>
+          <ul type="disc">
+            <li>
+              The Problem: You are in index.html and want to link to about.html.
+            </li>
+            <li>
+              The Logic: They are neighbors, living in the same my-website/
+              folder. The directions are as simple as possible
+            </li>
+            <li>The Syntax: You just use the filename.</li>
+            <img
+              src="./scenario 1.png"
+              alt="relative path example"
+              width="720px"
+            />
+          </ul>
+          <li>Scenario 2: Linking to a file in a SUB-FOLDER (Going Down).</li>
+          <ul>
+            <li>
+              The Problem: You are in <u>index.html</u> and want to display
+              logo.png.
+            </li>
+            <li>
+              The Logic: From <u>index.html</u>, you need to go into the images
+              folder to find the logo.
+            </li>
+            <li>
+              The Syntax: You write the folder name, a forward slash/, and then
+              the filename.codeHtml
+            </li>
+            <img
+              src="./scenario 2.png"
+              alt="relative path scenario 2"
+              width="720px"
+            />
+          </ul>
+        </ul>
+
+        <h3>B. Absolute File Paths</h3>
+        <p>
+          An absolute file path gives the full, complete URL to a resource on
+          the web. It starts with <u>http:// or https://.</u>
+        </p>
+
+        <ul>
+          <p>
+            When to use it: <br />
+            You ONLY use absolute paths when you are linking to a resource that
+            is NOT on your own website.
+          </p>
+          <li>Linking to another website.</li>
+          <li>Using a font from Google Fonts.</li>
+          <li>Using an image from an image-hosting service.</li>
+        </ul>
+        <p>Example:</p>
+        <img
+          src="./absolute path.png"
+          alt="absolute path example"
+          width="720px"
+        />
+        <br /><br />
+
+        <strong
+          ><mark>Note:</mark> The Critical "Why": Why not use absolute paths for
+          your own files?</strong
+        >
+        <p>
+          A beginner might be tempted to copy the full path from their computer,
+          like this: src="C:/Users/Arjun/Desktop/my-website/images/logo.png"
+        </p>
+        <p>
+          This is a major mistake. This address only works on your computer. The
+          moment you upload your website to a real web server, that path becomes
+          meaningless and the image will be broken.
+        </p>
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend><h2>2.HTML Boilerplate Code</h2></legend>
+        <h3>Step 1: The First Principle (The Fundamental Truth)</h3>
+        <p>
+          The fundamental truth is that a web browser is a program that needs
+          specific, predictable instructions to do its job. It cannot guess your
+          intentions. You can't just give it a file with a <<strong>h1</strong>>
+          tag and expect it to know what kind of document it is, what language
+          it's in, or how to render it properly.
+        </p>
+        <h3>Step 2: The Core Problem</h3>
+        <p>
+          We need a way to give the browser essential "setup information" before
+          it starts rendering our visible content (like paragraphs and images).
+          This setup information needs to answer critical questions:
+        </p>
+        <ul>
+          <li>
+            "What version of HTML am I reading?" (So I know which rules to
+            follow).
+          </li>
+          <li>
+            "What character encoding should I use?" (So characters like ©, or ₹
+            are displayed correctly and not as gibberish like â€™).
+          </li>
+          <li>"What should the title of the browser tab be?"</li>
+          <li>
+            "How should this page behave on a mobile device vs. a desktop?"
+          </li>
+          <p>Just writing "Hello" doesn't answer any of these questions.</p>
+        </ul>
+        <h3>Step 3: The Logical Solution - The Boilerplate</h3>
+        <p>
+          The solution is to create a standard, universal starting template—a
+          boilerplate. This is a block of code that you will start every single
+          HTML file with. It's not something you need to reinvent each time; you
+          just copy-paste it and fill in the blanks. It's the "blueprint of the
+          house" that you need before you can start putting in the walls
+          <strong>h1</strong> and windows <strong>img</strong>.
+        </p>
+        <p>Let's build the modern HTML5 boilerplate from first principles:</p>
+        <strong>The Anatomy of the HTML Boilerplate</strong>
+        <br />
+        <img
+          src="./boilerplate code.png"
+          alt="boilerplate code img"
+          width="720px"
+        />
+        <p>Let's break down each line and explain why it's necessary.</p>
+        <ol>
+          <strong><li>!DOCTYPE html:</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: In the past, there were many versions of HTML (HTML4,
+              XHTML, etc.). The browser needed to know which set of rules to use
+              to render the page.
+            </li>
+            <li>
+              The Solution: This is the very first line and it's called the
+              Document Type Declaration. In modern HTML5, it's incredibly
+              simple. This specific line tells the browser: "Use the latest,
+              standard-compliant mode for rendering this HTML document." It's a
+              switch that prevents the browser from falling back into "quirks
+              mode" (an old mode for rendering non-standard pages). It must
+              always be the first thing in your file.
+            </li>
+          </ul>
+          <strong> <li>html lang="en":</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: The web is global. How do search engines (like
+              Google) and screen readers (for accessibility) know what human
+              language the content is written in?
+            </li>
+            <li>
+              The Solution: This is the root element that wraps your entire
+              page. The lang="en" attribute declares that the primary language
+              of the page content is English. This is very important for
+              accessibility and SEO. You'd change "en" to "es" for Spanish, "hi"
+              for Hindi, etc.
+            </li>
+          </ul>
+          <strong> <li>Head:</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: As discussed, we need a place to put all the
+              "behind-the-scenes" information that is for the browser, not for
+              the user to see on the page.
+            </li>
+            <li>
+              The Solution: The <strong>head</strong> section is the container
+              for this metadata. Nothing you put inside the
+              <strong>head</strong> will be displayed in the main browser
+              window.
+            </li>
+          </ul>
+          <strong><li>meta charset="UTF-8":</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: Computers fundamentally only understand numbers. To
+              display text, they use a "character set" to map numbers to
+              letters. There are many different character sets, and if the
+              browser uses the wrong one, your text will be garbled.
+            </li>
+            <li>
+              The Solution: This meta tag explicitly tells the browser to use
+              UTF-8, which is the universal standard character set for the web.
+              It can represent almost any character and symbol from any language
+              in the world. This line is essential to prevent text-encoding
+              issues.
+            </li>
+          </ul>
+          <strong> <li>meta name="viewport":</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: A website can be viewed on a tiny phone screen or a
+              giant desktop monitor. If you don't tell a mobile browser how to
+              handle your page, it will try to render it as if it were on a
+              desktop—resulting in a tiny, zoomed-out, unreadable page.
+            </li>
+            <li>
+              The Solution: This specific meta tag is the cornerstone of
+              responsive design.
+            </li>
+            <ul type="circle">
+              <li>
+                width=device-width: This tells the browser: "Make the page's
+                width equal to the screen width of the device it's being viewed
+                on."
+              </li>
+              <li>
+                initial-scale=1.0: This sets the initial zoom level to 100% when
+                the page is first loaded.
+              </li>
+              <li>
+                In simple terms: this line tells the browser to render the page
+                in a way that is optimized for mobile screens.
+              </li>
+            </ul>
+          </ul>
+          <strong><li>title:</li></strong>
+          <ul type="disc">
+            <li>
+              The Problem: A user might have 20 tabs open. How do they identify
+              your page? What name should appear when they bookmark your page?
+            </li>
+            <li>
+              The Solution: The title tag sets the text that appears in the
+              browser tab, in bookmark lists, and in search engine results. It's
+              a critical piece of metadata for both usability and SEO.
+            </li>
+          </ul>
+          <strong><li>body:</li></strong>
+          <ul type="disc">
+            <li>The Problem: Where do we put the actual visible content?</li>
+            <li>
+              The Solution: The body section is the container for everything the
+              user will actually see on the page: your headings, paragraphs,
+              images, links, tables, etc. All the tags you've learned so far go
+              inside the body.
+            </li>
+          </ul>
+        </ol>
+      </fieldset>
+
+      <br />
+      <fieldset>
+        <legend><h2>2. class and id (The Labels for the Box)</h2></legend>
+        <h3>The Logical Solution: Two Types of Labels</h3>
+        <p>
+          The logical solution is to invent two types of labels (which we call
+          attributes) that you can add to any HTML tag.
+        </p>
+        <ol>
+          <li>
+            A Unique Identifier: We need a label for one, and only one, specific
+            element on the entire page. It must be unique. This is perfect for
+            major, one-of-a-kind layout sections like the main navigation bar or
+            a search form. This is the id.
+          </li>
+          <li>
+            A Reusable Classifier: We also need a label that we can apply to
+            multiple elements to group them into a category. This is for things
+            that have a similar style or function, like all the profile cards,
+            all the error messages, or all the "buy now" buttons. This is the
+            class.
+          </li>
+        </ol>
+        <p>Analogy:</p>
+        <ul>
+          <li>
+            An <strong>id</strong> is like a person's unique Social Security
+            Number or Aadhaar Number. Only one person can have it.
+          </li>
+          <li>
+            A <strong>class</strong> is like a person's Job Title (e.g.,
+            "Engineer"). Many people in a company can have the class "Engineer".
+          </li>
+        </ul>
+        <p>Example:</p>
+        <img src="./identifier.png" alt="Class & id syntax" width="720px" />
+      </fieldset>
+      <br>
+      <footer>
+        <table border="1" cellpadding="6" cellspacing="0">
+          <tr> 
+            <td><a href="./Lesson3.html">⬅️ Lesson 3</a></td>
+            <td><a href="./index.html">🏠 Home</a></td>
+            <td><a href="./Lesson5.html">Lesson 5 ➡️</a></td>
+            <td><p>&copy; 2025 Coder Army. Keep Learning, Keep Coding!</td>
+          </tr>
+        </table>
+      </footer>
+    </fieldset>
+  </body>
+</html>
