@@ -1,0 +1,48 @@
+
+#My1{
+        font-size: 50px;
+        color: red;
+        background-color: aqua;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.myunlist{
+                background-color: yellow;
+                font-size: 20px;
+                font-family: 'Courier New', Courier, monospace;
+}
+#firstunorderedlist{
+                        background-color: blue;
+                        font-size: 15px;
+                        font-family: Arial, Helvetica, sans-serif;
+}
+
+.mypara{
+        color: green;
+        font-size: 40px;
+}
+
+#myh2{
+        font-size: 50px;
+        color: purple;
+        background-color: black;
+}
+
+
+
+.clsh3{
+        color: blue;
+        background-color: green;
+}
+
+#myh3{
+        background-color: aqua;
+        color: red;
+}
+
+/* group base selection */
+
+h1, .mypara{
+                color: purple;
+                background-color: rgb(108, 198, 210);
+}
+
