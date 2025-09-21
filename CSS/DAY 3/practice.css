@@ -1,114 +1,116 @@
-#div1{
-        background-color: white;
-        height: 300px;
-        width: 300px;
-        border-radius: 50%;
-        position: relative;
-        display: inline-block;
+#div1 {
+    background-color: white;
+    height: 300px;
+    width: 300px;
+    border-radius: 50%;
+    position: relative;
+    display: inline-block;
 }
 
-#div2{
-        background-color: red;
-        height: 150px;
-        width: 150px;
-        box-sizing: border-box;
-        border-radius: 50%;
-        position: absolute;
-        top: 75px;
-        left: 75px;
+#div2 {
+    background-color: red;
+    height: 150px;
+    width: 150px;
+    box-sizing: border-box;
+    border-radius: 50%;
+    position: absolute;
+    top: 75px;
+    left: 75px;
 }
 
-#div3{
+#div3 {
     background-color: rgb(76, 106, 205);
     height: 300px;
     width: 450px;
     position: relative;
     margin: 10px 0px 0px 0px;
     display: inline-block;
-    
-}
-
-#div4{
-        background-color: yellow;
-        height: 300px;
-        width: 70px;
-        position: absolute;
-        left: 100px; 
-       
-       
-}
-
-#div5{
-
-            background-color: yellow;
-            height: 70px;
-            width: 450px;
-            position: absolute;
-            top: 115px;
-}
-
-.flag3{
-            background-color: red;
-            height: 300px;
-            width: 450px;
-            position: relative;
-             margin: 20px 0px 0px 0px;
-             display: inline-block;
-}
-
-.divno2{
-            background-color: navy;
-            width: 450px;
-            height: 150px;
-            position: absolute;
-            top: 75px;
-}
-
-.divno3{
-
-        background-color: white;
-        height: 100px;
-        width: 100px;
-        position: absolute;
-        left: 175px;
-        top: 100px;
-        border-radius: 50%;
-}
-
-.india{
-        background-color: orange;
-        width: 600px;
-        height: 450px;
-        position: relative;
-        box-sizing: border-box;
 
 }
 
-.india1{
-            background-color: white;
-            width: 600px;
-            height: 150px;
-            position: absolute;
-            top: 150px;
+#div4 {
+    background-color: yellow;
+    height: 300px;
+    width: 70px;
+    position: absolute;
+    left: 100px;
+
+
 }
 
-.india2{
+#div5 {
 
-            background-color: green;
-            width: 600px;
-            height: 150px;
-            position: absolute;
-            top: 300px;
+    background-color: yellow;
+    height: 70px;
+    width: 450px;
+    position: absolute;
+    top: 115px;
 }
-img{
-     height: 100px;
-     width: 100px;
+
+.flag3 {
+    background-color: red;
+    height: 300px;
+    width: 450px;
+    position: relative;
+    margin: 20px 0px 0px 0px;
+    display: inline-block;
+}
+
+.divno2 {
+    background-color: navy;
+    width: 450px;
+    height: 150px;
+    position: absolute;
+    top: 75px;
+}
+
+.divno3 {
+
+    background-color: white;
+    height: 100px;
+    width: 100px;
+    position: absolute;
+    left: 175px;
+    top: 100px;
+    border-radius: 50%;
+}
+
+.india {
+    background-color: orange;
+    width: 600px;
+    height: 450px;
+    position: relative;
+    box-sizing: border-box;
+
+}
+
+.india1 {
+    background-color: white;
+    width: 600px;
+    height: 150px;
+    position: absolute;
+    top: 150px;
+}
+
+.india2 {
+
+    background-color: green;
+    width: 600px;
+    height: 150px;
+    position: absolute;
+    top: 300px;
+}
+
+img {
+    height: 100px;
+    width: 100px;
     position: relative;
     bottom: 280px;
     left: 240px;
 
 }
 
-.india , .pose{
+.india,
+.pose {
     margin: 10px 0px 0px 400px;
 }
