@@ -1,0 +1,70 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f0f2f5;
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  /* text-transform: uppercase; */
+  /* font-variant:small-caps; */
+}
+
+.profile-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+  padding: 20px;
+  text-align: center;
+}
+
+.profile-image img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.name {
+  font-family: 'Georgia', serif;
+  font-size: 24px;
+  margin: 0 0 5px 0;
+  letter-spacing: 1px;
+}
+
+.title {
+  font-family: 'Arial', sans-serif;
+  font-size: 16px;
+  font-style: italic;
+  color: #666;
+  margin: 0 0 20px 0;
+  letter-spacing: 2px;
+}
+
+.bio {
+  font-family: 'Helvetica', sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+  margin: 0 0 20px 0;
+  text-align: justify;
+}
+
+.contact-info {
+  font-family: 'Courier New', monospace;
+  font-size: 13px;
+  line-height: 1.8;
+  color: #555;
+  text-align: left;
+  padding: 15px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  margin: 0;
+}

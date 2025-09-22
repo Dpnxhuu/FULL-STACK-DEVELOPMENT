@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+}
+
+/* Table base styles */
+.student-table {
+  /* Required: width property */
+  width: 100%;
+  /* Required: border-collapse property to remove spacing between cells */
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+/* Required: Cell styling using padding, text-align, and vertical-align properties */
+.student-table th,
+.student-table td {
+    padding: 12px 15px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+/* Required: Color styling for header cells */
+.student-table th {
+    background-color: #3498db;
+    color: white;
+  font-weight: 600;
+}
+
+/* Center align header cells for grade, score and attendance columns */
+.student-table th:nth-child(2),
+.student-table th:nth-child(3),
+.student-table th:nth-child(4) {
+    text-align: center;
+}
+
+/* Required: tr:nth-child(even) styling for alternating rows */
+.student-table tbody tr:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* Required: tr:nth-child(odd) styling for alternating rows */
+.student-table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Additional hover effect */
+.student-table tbody tr:hover {
+    background-color: #e8f4f8;
+}
+
+/* Additional styling for the name column */
+.student-table td:first-child {
+    font-weight: 500;
+}
+
+/* Required: text-align property demonstration for different columns */
+.student-table td:nth-child(2) {
+    text-align: center;
+    font-weight: 600;
+}
+
+.student-table td:nth-child(3),
+.student-table td:nth-child(4) {
+    text-align: center;
+}
