@@ -1,0 +1,43 @@
+.container {
+    background-color: antiquewhite;
+    /* width: 400px; */
+    height: 850px;
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* Justify-content: Main axis pe work karta hai */
+/* align-items: cross axis pe work karta hai */
+
+.box {
+    height: 100px;
+    width: 100px;
+    /* margin: 5px; */
+}
+
+.first {
+    background-color: orange;
+    /* flex-grow: 1; */
+    align-self: flex-end; /* it works on cross axis */
+}
+
+.second {
+    background-color: green;
+    /* flex-grow: 2; */
+}
+
+.third {
+    background-color: blue;
+    /* flex-grow: 3; */
+    /* flex-shrink: 2; */
+    flex-basis: 200px;
+}
+
+.fourth {
+    background-color: red;
+    /* flex-grow: 4; */
+}
