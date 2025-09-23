@@ -22,7 +22,8 @@
 .first {
     background-color: orange;
     /* flex-grow: 1; */
-    align-self: flex-end; /* it works on cross axis */
+    margin-left: 10px;
+    /* align-self: flex-end; it works on cross axis */
 }
 
 .second {

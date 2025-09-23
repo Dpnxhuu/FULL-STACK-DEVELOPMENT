@@ -1,15 +1,32 @@
 .progress{
             background-color: beige;
-            height: 20px;
+            height:50px;
             border: 1px solid black;
             border-radius: 10px;
             overflow: hidden;
+            width: 600px;
 }
 
 .progressbar{
             text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-color: blue;
             height: 100%;
             overflow: hidden;
             width: 50%;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+*{
+    font-size: 30px;
+    font-weight: 600;
 }
