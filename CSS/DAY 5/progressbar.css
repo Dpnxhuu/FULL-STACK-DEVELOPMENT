@@ -1,0 +1,15 @@
+.progress{
+            background-color: beige;
+            height: 20px;
+            border: 1px solid black;
+            border-radius: 10px;
+            overflow: hidden;
+}
+
+.progressbar{
+            text-align: center;
+            background-color: blue;
+            height: 100%;
+            overflow: hidden;
+            width: 50%;
+}

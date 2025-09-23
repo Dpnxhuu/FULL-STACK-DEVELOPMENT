@@ -1,0 +1,63 @@
+.mypara1{
+    text-shadow: 10px 5px 10px rgb(255, 21, 21), 5px 5px rgb(215, 255, 17);
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    color: pink;
+    /* text-transform: capitalize; */
+    text-align: center;
+    text-decoration: dashed underline;
+    /* font-variant: small-caps; */
+}
+body{
+        background-color: black;
+}
+.mypara
+{
+    color: white;
+    font-family:"Tourney", sans-serif;
+    text-align: center;
+}
+
+/* .mypara {
+  font-family: "Tourney", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+} */
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} */
+
+/* body {
+  font-family: 'Playfair Display', serif;
+  background-color: #000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+h1 {
+  font-size: 8rem;
+  line-height: 0.9;
+  font-weight: 700;
+  letter-spacing: -2px;
+  color: #ffffff;
+  /* Required: Multiple layered text-shadow for dramatic effect */
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+  /* White glow */        
+  0 0 20px rgba(255, 255, 255, 0.5), 
+  /* Outer white glow */  
+  5px 5px 0px #ff0066,
+  /* Solid pink offset */ 
+  8px 8px 0px #00ffff, 
+  /* Solid cyan offset */ 
+  12px 12px 30px rgba(0, 0, 0, 0.8); 
+  /* Soft black shadow */
+}

@@ -1,0 +1,24 @@
+p::before {
+    content: "-------->\"";
+    color: red;
+}
+
+p::after {
+    content: "\"";
+    color: blue;
+}
+
+
+.mydiv{
+
+    position: relative;
+    background-color: blue;
+    height: 10rem;
+    width: 10rem;
+}
+
+.mysecdiv{
+    position: absolute;
+    top: 50%;
+
+}
