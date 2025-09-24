@@ -1,0 +1,44 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+     background-color: black;
+     justify-content: center;
+     align-items: center;
+     aligncon;
+     height: 100vh;
+}
+.container{
+    display: flex;
+    margin: 10px;
+    background-color: rgb(232, 100, 100);
+    flex-direction: row;
+     width: 500px;
+     height: 300px;
+     /* overflow: scroll; */
+}
+
+.box{
+        height: 95%;
+        width: 95%;
+        /* gap: 10px; it does not work in flex it works in grid */
+        margin: 10px;
+}
+.first{
+   
+    background-color: red;
+}
+.second{
+   
+    background-color: rgb(72, 0, 255);
+}
+.third{
+    background-color: rgb(204, 207, 23);
+}
+.fourth{
+    background-color: rgb(229, 33, 147);
+}
