@@ -1,91 +1,85 @@
-* {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    line-height: 1.5;
-}
+@import url("https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap");
 
-body {
-    background-color: rgb(198, 198, 198);
-    height: 100vh;
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+      * {
+        margin: 0px;
+        padding: 0px;
+        font-family: "poppins";
+      }
 
-.container {
-    box-shadow: 0px 0px 15px 10px #b7b7b7;
-    border-radius: 20px;
-    background-color: white;
-    width: 25%;
-    height: 90%;
-    display: flex;
-    flex-direction: column;
-}
-
-.first img {
-    box-shadow: 0px 0px 20px 10px rgb(229, 229, 229);
-    position: relative;
-    top: 10px;
-    left: 16px;
-    right: 10px;
-    margin-bottom: 15px;
-    border-radius: 20px;
-    height: 300px;
-    width: 92%;
-}
-
-.second span {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    outline: 1px solid rgb(209, 209, 209);
-    padding: 5px;
-    border-radius: 20px;
-    background-color: rgb(250, 250, 250);
-
-    display: inline-block;
-    position: relative;
-    left: 40px;
-    margin: 5px;
-
-}
-
-.third {
-    font-size: 40px;
-    position: relative;
-    left: 25px;
-}
-
-.fourth {
-    text-align: justify;
-    margin: 15px;
-    color: grey;
-}
-.last{
+      body {
         display: flex;
         justify-content: center;
-        /* margin-bottom: 20px; */
-}
-.last span{
-    outline: 1px solid rgb(209, 209, 209);
-    padding: 10px;
-    border-radius: 25px;
-    background-color: rgb(187, 215, 239);
-    color: rgb(75, 75, 255);
-    outline: 1px solid whitesmoke;
-    text-align: center;
-    font-weight: 700;
-    width: 130px;
-    
-}
+        align-items: center;
+        height: 100vh;
+        background-color: rgb(201, 201, 201);
+      }
 
-span:hover{
-            background-color: rgb(201, 201, 201);
-            color: rgb(0, 0, 0);
-            cursor: pointer;
-}
+      .card {
+        margin: 5px;
+        box-shadow: 0px 0px 10px 10px rgb(177, 177, 177);
+        padding-bottom: 70px;
+        background-color: white;
+        width: 198px;
+        height: 298px;
+        border-radius: 10px;
+      }
 
-span:active{
-    background-color: rgb(63, 153, 255);
-}
+      .img {
+        padding: 5px;
+      }
+      .img img {
+        border-radius: 10px;
+        height: 158px;
+        width: 188px;
+      }
+
+      .capsule span {
+        background-color: rgb(237, 237, 237);
+        border-radius: 30px;
+        padding: 2px 10px;
+        margin: 0px 0px 0px 15px;
+        font-size: 12px;
+      }
+
+      .content h2 {
+        font-weight: 500;
+        font-size: 20px;
+        padding: 8px 0px 8px 8px;
+      }
+      .content p {
+        padding: 0px 15px;
+        font-size: 10px;
+        color: grey;
+      }
+
+      .button {
+        padding-top: 10px;
+        text-align: center;
+      }
+
+      .button button {
+        border-radius: 30px;
+        padding: 2px 10px;
+        border: none;
+        font-size: 13px;
+        font-weight: 350;
+        /* box-shadow: 0px 0px 10px 8px whitesmoke; */
+      }
+
+      span:hover,
+      button:hover {
+        background-color: rgb(114, 162, 246);
+        color: white;
+        cursor: pointer;
+      }
+
+      @media screen and (max-width: 720px) {
+        body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: rgb(201, 201, 201);
+        }
+      }
