@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Variable - in CSS</title>
+    <style>
+
+        :root{
+            --color: rgb(255, 255, 24);
+            --lamda: rgb(233, 108, 108);
+        }
+
+        h2{
+            background-color: var(--color);
+        }
+
+        p:first-child{
+            --lamda: rgb(6, 135, 45);
+            background-color: var(--lamda);
+        }
+
+        p:nth-child(2)
+        {
+            color: var(--lamda);
+        }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+
+         <div class="heading"><h2>Deepanshu</h2></div>
+      <div class="box first">
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+          Exercitationem adipisci eveniet id nobis laudantium quo? Possimus
+          voluptatem nostrum perspiciatis eveniet.
+        </p>
+
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum
+          libero sed temporibus distinctio atque excepturi quia ducimus numquam
+          itaque illum?1
+        </p>
+      </div>
+
+     
+    </div>
+  </body>
+</html>
