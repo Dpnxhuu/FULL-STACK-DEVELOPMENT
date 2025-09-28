@@ -1,0 +1,121 @@
+* {
+    padding: 0px;
+    margin: 0px;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+.container {
+    height: 100vh;
+    position: relative;
+}
+
+.navigation a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: rgb(255, 166, 0);
+}
+
+.navigation span {
+    color: white;
+}
+
+.navigation {
+    position: sticky;
+    top: 0px;
+    font-size: 14px;
+    height: 40px;
+    background-color: #131A22;
+    padding: 5px;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+button {
+    padding: 0px 4px;
+    color: white;
+    background-color: rgb(255, 166, 0);
+}
+
+.form {
+    margin-right: 150px;
+}
+
+.content {
+    display: flex;
+    flex-wrap: wrap;
+    /* gap: 2px; */
+}
+
+.A {
+    margin: 0px auto;
+    height: 500px;
+    width: 500px;
+}
+
+.ct-1 {
+    background-color: red;
+    background-image: url("https://i.pinimg.com/736x/03/c5/87/03c5872d9681815b693f3622ad28fb0f.jpg");
+    background-size: contain;
+    transition: all 0.8 ease-in;
+    
+}
+
+.A:hover {
+    /* transform: rotate(45deg) ; */
+    width: 510px;
+    height: 510px;
+    box-shadow: 0px 0px 10px 5px black;
+
+}
+
+.ct-2 {
+    background-image: url("https://i.pinimg.com/736x/88/a6/27/88a6278adeab1c6b8a2a60a89c087aac.jpg");
+    background-size: cover;
+    background-color: green;
+    transition: all 0.5 ease-in;
+}
+
+.ct-3 {
+    background-image: url("https://wallpapers.com/images/hd/enola-holmes-close-up-79ssr3e45tmzsvxe.jpg");
+    background-size: contain;
+    /* background-repeat: no-repeat; */
+    background-color: blue;
+    transition: all 0.5 ease-in;
+}
+
+.footer {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    text-align: center;
+    height: 70px;
+    background-color: #131A22;
+}
+
+.footer p {
+    padding: 6px 10px;
+    color: #DDD;
+}
+
+.footer a {
+    padding-left: 10px;
+    text-decoration: none;
+    color: #DDD;
+}
+
+.trans {
+    margin: 10px;
+    background-color: aqua;
+    width: 100px;
+    height: 100px;
+    transition: all 0.3 ease-in;
+}
+
+.trans:hover {
+    height: 110px;
+    width: 110px;
+    background-color: bisque;
+    font-size: 15px;
+    box-shadow: 0px 0px 10px 5px black;
+}
