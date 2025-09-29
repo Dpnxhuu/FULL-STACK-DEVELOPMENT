@@ -1,12 +1,12 @@
 .container {
     background-color: antiquewhite;
     /* width: 400px; */
-    height: 850px;
+    height: 500px;
     display: flex;
-    flex-direction: row;
-    justify-content: start;
-    align-items: center;
-    flex-wrap: wrap;
+    flex-direction: column;
+    /* justify-content: start; */
+    /* align-items: center; */
+    /* flex-wrap: wrap; */
     gap: 10px;
 }
 
@@ -21,8 +21,9 @@
 
 .first {
     background-color: orange;
+    align-self: end;
     /* flex-grow: 1; */
-    margin-left: 10px;
+    /* margin-left: 10px; */
     /* align-self: flex-end; it works on cross axis */
 }
 
@@ -35,7 +36,7 @@
     background-color: blue;
     /* flex-grow: 3; */
     /* flex-shrink: 2; */
-    flex-basis: 200px;
+    /* flex-basis: 200px; */
 }
 
 .fourth {

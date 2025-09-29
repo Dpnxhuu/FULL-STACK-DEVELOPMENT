@@ -1,0 +1,63 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.container {
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    gap: 10px;
+    /* perspective: 1000px; */
+
+}
+
+.box {
+    cursor: pointer;
+    border: 2px solid;
+    height: 100px;
+    width: 100px;
+    transition: all 0.2s ease-in;
+    /* transform: translate(200); */
+}
+
+.box:hover {
+    /* /* width: 120px;
+    height: 120px; */
+    box-shadow: 0px 0px 8px 2px black; 
+    transform: scale(1.2);
+    transform: rotatex(80deg);
+    /* transform: translate(100px); */
+
+}
+
+.one {
+    /* transform: translate(-2px, -20px); */
+    background-image: url("https://i.pinimg.com/1200x/f1/0c/82/f10c82bcb35cac8ad92d7b37f5e416b1.jpg");
+    background-size: cover;
+}
+
+.two {
+    background-image: url("https://i.pinimg.com/1200x/18/f0/45/18f045b0936ab238ae827e9a0ee0b885.jpg");
+    background-size: cover;
+}
+
+.three {
+    background-image: url("https://i.pinimg.com/1200x/57/a7/0f/57a70f47b5cf73090856c5fb2816e687.jpg");
+    background-size: cover;
+}
+
+.four {
+    background-image: url("https://i.pinimg.com/736x/b3/df/d7/b3dfd7259b62bb40b723cadaafcb2389.jpg");
+    background-size: cover;
+}
