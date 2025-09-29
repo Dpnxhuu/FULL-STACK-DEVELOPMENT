@@ -55,8 +55,8 @@
 
 .A {
     margin: 0px auto;
-    height: 500px;
-    width: 500px;
+    height: 200px;
+    width: 200px;
 }
 
 .ct-1 {
@@ -69,8 +69,8 @@
 
 .A:hover {
     /* transform: rotate(45deg) ; */
-    width: 510px;
-    height: 510px;
+    width: 210px;
+    height: 210px;
     box-shadow: 0px 0px 10px 5px black;
 
 }

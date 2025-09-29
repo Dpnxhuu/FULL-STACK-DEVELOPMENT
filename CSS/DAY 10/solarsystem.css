@@ -148,7 +148,7 @@ body {
     border-radius: 50%;
     background-color: #f8c471;
     animation-name: jupitar;
-    animation-duration: 37s;
+    animation-duration: 35s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -183,7 +183,7 @@ body {
     border-radius: 50%;
     background-color: #d1693f;
     animation-name: mars;
-    animation-duration: 32s;
+    animation-duration: 30s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -218,7 +218,7 @@ body {
     border-radius: 50%;
     background-color: #4f97dd;
     animation-name: earth;
-    animation-duration: 27s;
+    animation-duration: 25s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
@@ -253,24 +253,24 @@ body {
     border-radius: 50%;
     background-color: #e3bb76;
     animation-name: venus;
-    animation-duration: 22s;
+    animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 @keyframes venus {
 
     from {
-        transform: rotate(0deg) translate(75px) rotate(0deg);
+        transform: rotate(0deg) translate(85px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translate(75px) rotate(-360deg);
+        transform: rotate(360deg) translate(85px) rotate(-360deg);
     }
 
 }
 .seventh-last {
-    height: 150px;
-    width: 150px;
+    height: 170px;
+    width: 170px;
     border: 1px solid white;
     border-radius: 50%;
     position: absolute;
@@ -289,24 +289,24 @@ body {
     background-color: #8c7e6d;
     /* transform: translate(120px); */
     animation-name: mercury;
-    animation-duration: 17s;
+    animation-duration: 15s;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
 }
 @keyframes mercury {
 
     from {
-        transform: rotate(0deg) translate(50px) rotate(0deg);
+        transform: rotate(0deg) translate(55px) rotate(0deg);
     }
 
     to {
-        transform: rotate(360deg) translate(50px) rotate(-360deg);
+        transform: rotate(360deg) translate(55px) rotate(-360deg);
     }
 
 }
 .eight-last {
-    height: 100px;
-    width: 100px;
+    height: 110px;
+    width: 110px;
     border: 1px solid white;
     border-radius: 50%;
     position: absolute;

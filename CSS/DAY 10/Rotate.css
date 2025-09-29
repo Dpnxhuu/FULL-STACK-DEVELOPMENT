@@ -15,20 +15,21 @@ body {
 
 .container {
     display: flex;
+    justify-content: center;
     /* flex-direction: column; */
     flex-wrap: wrap;
-    gap: 10px;
-    /* perspective: 1000px; */
+    gap: 20px;
+    perspective: 1000px;
 
 }
 
 .box {
     cursor: pointer;
     border: 2px solid;
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
     transition: all 0.2s ease-in;
-    /* transform: translate(200); */
+    transform: translate(200);
 }
 
 .box:hover {
@@ -36,28 +37,30 @@ body {
     height: 120px; */
     box-shadow: 0px 0px 8px 2px black; 
     transform: scale(1.2);
-    transform: rotatex(80deg);
-    /* transform: translate(100px); */
+    /* transform: rotatex(80deg); */
+    /* transform: translate(1); */
 
 }
 
 .one {
     /* transform: translate(-2px, -20px); */
-    background-image: url("https://i.pinimg.com/1200x/f1/0c/82/f10c82bcb35cac8ad92d7b37f5e416b1.jpg");
+    background-image: url("https://i.pinimg.com/1200x/fb/1e/7f/fb1e7f9db2540c3194a9179094a925e2.jpg");
     background-size: cover;
 }
 
 .two {
-    background-image: url("https://i.pinimg.com/1200x/18/f0/45/18f045b0936ab238ae827e9a0ee0b885.jpg");
+    background-image: url("https://i.pinimg.com/736x/da/30/69/da30697068c26ddb9d9aa603889480d9.jpg");
     background-size: cover;
 }
 
 .three {
-    background-image: url("https://i.pinimg.com/1200x/57/a7/0f/57a70f47b5cf73090856c5fb2816e687.jpg");
+    
+    background-image: url("https://i.pinimg.com/1200x/0e/4f/dc/0e4fdce8ac22e09688c580e5bc4dcd7d.jpg");
     background-size: cover;
+    /* background-repeat: no-repeat; */
 }
 
 .four {
-    background-image: url("https://i.pinimg.com/736x/b3/df/d7/b3dfd7259b62bb40b723cadaafcb2389.jpg");
+    background-image: url("https://i.pinimg.com/736x/2e/c1/be/2ec1beb12df88032782f21992408e3ae.jpg");
     background-size: cover;
 }
