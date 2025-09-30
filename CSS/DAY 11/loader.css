@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.loader {
+    height: 50px;
+    width: 50px;
+    border: 2px solid rgba(255, 255, 255, 0.185);
+    border-top: 2px solid rgba(255, 255, 255, 0.826);
+    border-radius: 50%;
+    animation: loader 1s ease-in-out 0s infinite;
+}
+
+@keyframes loader {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
