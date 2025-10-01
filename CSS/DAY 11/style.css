@@ -1,80 +1,90 @@
-*{
+* {
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: Arial;
 }
-html
-{
+
+html {
     font-size: 1rem;
 }
-.navbar{
-    height: 9vh;
+
+.navbar {
+    height: 60px;
     background-color: #131A22;
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
-    width: 100vw;
-    font-size: 1rem;
 }
 
 /* box 1 */
-.amazon-logo
-{
-    height: 80%;
-    width: 130px;
-    background-image: url("./image-removebg-preview.png");
-    background-size: cover;
+.amazon-icon-div {
+    margin-left: 10px;
+    width: 118px;
+    height: 50px;
 }
 
-.border:hover
-{
+.amazon-logo {
+    height: 100%;
+    width: 100%;
+    background-image: url("./image-removebg-preview.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.border:hover {
     border: 1.5px solid white;
+    border-radius: 3px;
 }
 
 /* box 2 */
-.nav-address
-{
-    padding-top: 10px;
-    height: 80%;
-    width: 75px;
+.nav-address {
+    width: 90px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
 }
-.delivery
-{
-    margin-left: 18px;
-    font-size: 0.7rem;
+
+.delivery {
+    font-size: 0.8rem;
     color: #cccccc;
+    display: block;
 }
-.india
-{
+
+.icon-location {
+    display: flex;
+    gap: 4px;
+}
+
+.icon-location span {
     font-weight: 600;
-    padding-left: 2px;
     font-size: 1rem;
     color: #ffffff;
 }
-.location-icon
-{
+
+.icon-location>div {
     width: 15px;
     height: 18px;
-    background-image: url("https://www.svgrepo.com/show/532539/location-pin.svg");
-    background-size: cover;
     filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(1301%) hue-rotate(188deg) brightness(106%) contrast(105%);
-}
-.icon-1
-{
-    display: flex;
-
 }
 
 /* box 3 */
-.nav-search{
+.nav-search {
     display: flex;
-    width: 790px;
-    height: 70%;
+    width: 880px;
+    height: 40px;
+    justify-content: center;
 }
-.option select
-{
-    padding: 0px 5px 0px 8px;
+
+.nav-search input:focus {
+    outline: 3px solid #febd68;
+    border-radius: 1px;
+}
+
+.nav-search select {
+    text-align: center;
     font-weight: 600;
     border: 1.5px solid rgba(128, 128, 128, 0.381);
     border-radius: 10% 0% 0% 10%;
@@ -82,67 +92,58 @@ html
     color: #939393;
     background-color: #ebebeb;
     width: 50px;
-    height: 100%;
 }
 
-.nav-search select:hover{
+.nav-search select:hover {
     color: #4e4e4e;
-     background-color: #d3d3d3;
+    background-color: #d3d3d3;
 }
 
 
-.nav-search input{
-    border: none;
+.nav-search input {
     font-size: 0.9rem;
     font-weight: 520;
     padding-left: 10px;
-    width: 780px;
-    height: 100%;
-    
+    width: 100%;
+    border: none;
+
 }
 
-.nav-search label
-{
+.nav-search label {
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ffd428;
+    background-color: #febd68;
     width: 45px;
-    height: 100%;
     border-radius: 0% 10% 10% 0%;
-    font-size: 1rem;
-   
-}
-.nav-search  label:hover
-{
-    background-color:  rgb(239, 175, 0);
+    font-size: 1.2rem;
+
 }
 
-.nav-lang
-{
-    margin-left: 90px;
+.nav-search label:hover {
+    background-color: #ffaf46;
+}
+
+.nav-lang {
     height: 50px;
-    width: 70px;
+    width: 65px;
     display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px 0px 5px;
+    margin-left: 10px;
 }
-.usa-flag
-{
-    padding-top: 19px;
-    padding-left: 5px;
+
+.nav-lang span {
     width: 25px;
-    height: 20px;
-}
-.flag-icon
-{
-    width: 21px;
     height: 16px;
     background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png?20240524035322");
     background-size: cover;
-    margin-top: 1px;
+
 }
-.nav-lang select{
-    margin-top: 20px;
+
+.nav-lang select {
     font-weight: 600;
     border: none;
     background-color: transparent;
@@ -150,140 +151,139 @@ html
     font-size: 0.9rem;
 }
 
-.sign-in
-{
-    padding-top: 10px;
+.sign-in {
+    text-align: left;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     height: 50px;
-    width: 118px;
+    width: 130px;
 }
-.sign-option select
-{
-     color: #ffffff;
+
+.sign-in select {
+    color: #ffffff;
     background-color: transparent;
     border: none;
     font-size: 0.9rem;
     font-weight: 600;
 }
-.hello{
+
+.sign-in span {
     padding-left: 5px;
     font-size: 0.7rem;
-     color: #ffffff;
+    color: #ffffff;
 }
 
-.return-order
-{
+.return-order {
+    display: flex;
+    justify-content: center;
     padding-left: 5px;
-    padding-top: 8px;
+    flex-direction: column;
     height: 50px;
     width: 76px;
 }
-.return{
+
+.return {
+    display: block;
     font-size: 0.7rem;
     color: #ffffff;
 }
-.order{
+
+.order {
+    display: block;
     font-size: 0.9rem;
     font-weight: 600;
     color: #ffffff;
 
 }
-.shopping
-{
+
+.shopping {
 
     display: flex;
-    width: 84px;
+    justify-content: center;
+    align-items: center;
+    width: 85px;
     height: 50px;
-    margin-right: 5px;
+    margin-right: 15px;
 }
-.cart-icon
-{
+
+.shopping div {
     background-image: url("https://www.svgrepo.com/show/165131/shopping-cart-empty-side-view.svg");
     background-size: cover;
     filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(1301%) hue-rotate(188deg) brightness(106%) contrast(105%);
     width: 40px;
     height: 40px;
-    transform: rotate(-1deg);
 }
-.cart{
-    margin-left: 1px;
-    margin-top: 20px;
+
+.shopping span {
     font-size: 0.9rem;
     color: #ffffff;
     font-weight: 600;
 }
-.cart-icon p
-{
+
+.cart-icon p {
     transform: translate(20px, 9px);
     font-size: 0.9rem;
     font-weight: 600;
 }
 
-.sec-nav
-{
-    height: 36px;
-    width: 100vw;
-    background-color: #27313c;
+.sec-nav {
+    height: 38px;
+    background-color: #232f3e;
     display: flex;
-    justify-content: start;
-    align-items: center;
+    gap: 10px;
     font-size: 0.9rem;
 }
 
-.box-1
-{
-    width: 60px;
-    height: 75%;
+.menu-box {
     display: flex;
-    gap: 8px;
-    padding-bottom: 10px;
-    /* display: flex;
-    justify-content: center;
-    align-items: center;*/
-    margin-left: 10px;
+    margin-left: 15px;
+    gap: 9px;
 }
 
-.all-icon
-{
+.menu-icon {
     width: 17px;
-    height: 14px;
     filter: brightness(0) saturate(100%) invert(100%) sepia(6%) saturate(1301%) hue-rotate(188deg) brightness(106%) contrast(105%);
     font-size: 1.2rem;
 }
 
-.nav-all
-{
-    /* padding-top: 8px; */
-        color: #ffffff;
-        font-weight: 600;
+.nav-all {
+    color: #ffffff;
+    font-weight: 600;
 }
 
-.deal{
-    width: 115px;
-   height: 75%;
+.deal {
     color: #ffffff;
 }
-.prime{
-    width: 105px;
-     height: 75%;
+
+.prime {
     color: #ffffff;
 }
-.reg{
-    width: 71px;
-    height: 75%;
+
+.reg {
     color: #ffffff;
 }
-.gift-cards{
-    width: 85px;
-    height: 75%;
+
+.gift-cards {
     color: #ffffff;
 }
-.customer-service{
-    width: 130px;
-    height: 75%;
+
+.customer-service {
     color: #ffffff;
 }
-.sell{
-    width: 43px;
-     height: 75%;
+
+.sell {
     color: #ffffff;
+}
+
+.border-sec {
+    padding: 0px 5px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.border-sec:hover {
+    border: 1.5px solid white;
+    border-radius: 4px;
 }

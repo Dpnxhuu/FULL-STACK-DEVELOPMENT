@@ -1,0 +1,126 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+     font-family: "Geo", sans-serif;
+     font-weight: 400;
+  font-style: normal;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Geo:ital@0;1&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Tourney:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    overflow: hidden;
+    background: url("https://images.pexels.com/photos/1612351/pexels-photo-1612351.jpeg?_gl=1*1fd8r6m*_ga*MTkzNzI0NDc5MS4xNzUzMTA3MjEz*_ga_8JE65Q40S6*czE3NTkzMTc4NDUkbzE5JGcxJHQxNzU5MzE3ODg1JGoyMCRsMCRoMA..");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    width: 90%;
+    height: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-up {
+    width: 350px;
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    border-radius: 28px;
+    padding: 30px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: white;
+    text-align: center;
+}
+
+.sign-up h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.sign-up > p {
+
+    /* color: black; */
+    font-size: 0.9rem;
+    /* text-align: center; */
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    font-size: 0.9rem;
+    /* color: rgba(255, 255, 255, 0.8); */
+    display: block;
+    margin-bottom: 5px;
+}
+
+.input-group input {
+    color: white;
+    padding: 10px;
+    font-size: 1rem;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.2);
+}
+.input-group input:focus{
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+
+}
+
+.sign-up button {
+    width: 100%;
+    color: rgb(255, 255, 255);
+    padding: 12px;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #ff4e50, #f9d423);
+    cursor: pointer;
+    border: none;
+    font-weight: bolder;
+    transition: all 0.3 ease-in;
+
+}
+.sign-up button:hover
+{
+    transform: scale(1.01);
+}
+
+.sign-up a {
+    font-weight: bold;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: white;
+}
+
+.login-link
+{
+    font-size: 0.8rem;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.login-link:hover {
+
+    color: white;
+
+}
