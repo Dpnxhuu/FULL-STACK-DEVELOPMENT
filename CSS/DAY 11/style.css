@@ -3,6 +3,7 @@
     padding: 0px;
     box-sizing: border-box;
     font-family: Arial;
+    scroll-behavior: smooth;
 }
 
 html {
@@ -272,7 +273,7 @@ body {
     background-image: url("Hero_section_img1.jpg");
     background-size: contain;
     background-repeat: no-repeat;
-    height: 1410px;
+    height: 1960px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -282,7 +283,7 @@ body {
 
 .card-section {
     display: grid;
-    grid-template-rows: 40px 420px 420px;
+    grid-template-rows: 40px 420px 420px 251px 251px;
     grid-template-columns: 350px 350px 350px 350px;
     gap: 18px;
 }
@@ -850,4 +851,35 @@ body {
 {
     color: #042a4f;
 
+}
+
+/* hero section 2 */
+.heading-9
+{
+    font-size: 0.9rem;
+    color: #0f1111;
+    margin: 30px 20px;
+}
+
+#list-1 a
+{
+    background-image: url("Watch1.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 100px;
+    height: 100px;
+}
+
+.nine
+{
+    grid-row: 4/5;
+    grid-column: 1/5;
+}
+
+.ten
+{
+    grid-row: 5/6;
+    grid-column: 1/5;
 }
