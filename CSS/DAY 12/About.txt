@@ -1,2 +1,1 @@
-This my day 12 of learning CSS.
-Today's topic about advance CSS
+Day 2 of making website clone
