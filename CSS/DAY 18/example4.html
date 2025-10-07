@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hackathon Courses — Dark Neon Theme</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap" rel="stylesheet">
+<style>
+/* =====================
+   Reset & Base
+===================== */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Inter',sans-serif;}
+html{scroll-behavior:smooth;}
+body{background:#0a0a0a;color:#fff;line-height:1.4;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;}
+a{text-decoration:none;color:inherit;}
+.container{width:min(1200px,92%);margin:0 auto;}
+
+/* =====================
+   Navbar
+===================== */
+header{position:fixed;top:18px;left:50%;transform:translateX(-50%);width:min(1200px,94%);z-index:60;background:rgba(0,0,0,0.8);backdrop-filter:blur(10px);border-radius:14px;display:flex;justify-content:space-between;align-items:center;padding:15px 0;box-shadow:0 10px 25px rgba(0,255,255,0.25);transition:all 0.3s ease-in-out;}
+header:hover{transform:translateX(-50%) translateY(-3px);box-shadow:0 16px 40px rgba(0,255,255,0.35);}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.brand{display:flex;align-items:center;gap:10px;}
+.logo{width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#00ffff,#0ff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#000;font-size:18px;box-shadow:0 6px 18px rgba(0,255,255,0.4);}
+.brand h1{font-size:16px;color:#00ffff;}
+nav ul{display:flex;gap:16px;align-items:center;list-style:none;}
+nav a{color:#fff;font-weight:500;position:relative;padding:10px 15px;border-radius:8px;transition:all 0.3s ease;}
+nav a::after{content:"";position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:0;height:2px;background:#0ff;transition:0.3s ease;border-radius:2px;}
+nav a:hover{color:#0ff;text-shadow:0 0 10px #0ff;transform:translateY(-4px) scale(1.1);}
+nav a:hover::after{width:60%;}
+.nav .cta{background:linear-gradient(90deg,#00ffff,#0ff);color:#000;padding:9px 14px;border-radius:10px;box-shadow:0 8px 22px rgba(0,255,255,0.3);transition:transform .22s ease,box-shadow .22s ease;}
+.nav .cta:hover{transform:translateY(-4px);box-shadow:0 14px 36px rgba(0,255,255,0.45);}
+@media(max-width:720px){.brand h1{display:none;}nav ul{gap:10px;}}
+
+/* =====================
+   Hero Section
+===================== */
+.hero{padding-top:120px;min-height:88vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;}
+.hero .media{position:absolute;inset:0;z-index:0;overflow:hidden;}
+.hero video{width:100%;height:100%;object-fit:cover;filter:saturate(.95) contrast(.95);transform:scale(1.05);}
+.hero .overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.6),rgba(0,0,0,0.7));z-index:1;}
+.hero .content{position:relative;z-index:2;width:100%;max-width:1100px;display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:56px 24px;}
+.hero .left h2{font-size:clamp(28px,4.4vw,44px);color:#0ff;line-height:1.02;margin-bottom:12px;text-shadow:0 8px 30px rgba(0,255,255,0.6);animation:fadeUp .9s cubic-bezier(.2,.9,.2,1) both;}
+.hero .left p{color:#ccc;font-size:16px;margin-bottom:18px;max-width:46ch;animation:fadeUp .9s .15s cubic-bezier(.2,.9,.2,1) both;}
+.hero .actions{display:flex;gap:12px;align-items:center;animation:fadeUp .9s .25s both;}
+.btn{display:inline-block;padding:12px 16px;border-radius:10px;font-weight:600;transition:all .22s ease;border:none;}
+.btn-primary{background:linear-gradient(90deg,#00ffff,#0ff);color:#000;box-shadow:0 12px 32px rgba(0,255,255,0.3);}
+.btn-primary:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(0,255,255,0.45);}
+.btn-ghost{background:rgba(255,255,255,0.05);color:#0ff;border:1px solid rgba(0,255,255,0.2);}
+.hero .card{background:linear-gradient(180deg,rgba(0,255,255,0.06),rgba(0,255,255,0.03));border-radius:14px;padding:18px;box-shadow:0 14px 40px rgba(0,255,255,0.25);color:#0ff;min-height:180px;display:flex;flex-direction:column;justify-content:center;animation:floatIn .9s .32s cubic-bezier(.2,.9,.2,1) both;}
+.card h3{margin-bottom:8px;font-size:18px;}
+.card p{font-size:14px;opacity:0.92;}
+@keyframes fadeUp{from{transform:translateY(18px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+@keyframes floatIn{from{transform:translateY(18px) scale(.98);opacity:0;}to{transform:translateY(0) scale(1);opacity:1;}}
+
+/* =====================
+   Sections
+===================== */
+.site-section{padding:72px 0;}
+.section-title{text-align:center;margin-bottom:26px;font-size:18px;color:#0ff;opacity:0.95;text-shadow:0 0 10px #0ff;}
+.section-sub{text-align:center;margin-bottom:36px;color:#ccc;opacity:0.85;}
+.courses-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;}
+.course{background:#111;border-radius:12px;padding:16px;box-shadow:0 10px 30px rgba(0,255,255,0.15);transition:transform .28s,box-shadow .28s;overflow:hidden;animation:reveal .6s both;}
+.course:hover{transform:translateY(-10px);box-shadow:0 22px 48px rgba(0,255,255,0.4);}
+.course .thumb{height:140px;border-radius:10px;background:linear-gradient(135deg,#00ffff,#0ff);display:flex;align-items:center;justify-content:center;color:#000;font-weight:700;margin-bottom:12px;box-shadow:0 8px 20px rgba(0,255,255,0.25);}
+.course h4{margin-bottom:8px;font-size:16px;color:#0ff;}
+.course p{font-size:13px;color:#ccc;margin-bottom:12px;}
+.course .enroll{display:inline-block;padding:8px 12px;border-radius:10px;font-weight:600;background:linear-gradient(90deg,#00ffff,#0ff);color:#000;transition:transform .2s;}
+.course .enroll:hover{transform:translateY(-4px);}
+
+@keyframes reveal{from{transform:translateY(12px);opacity:0;}to{transform:translateY(0);opacity:1;}}
+
+/* Instructors */
+.instructors{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;align-items:start;}
+.instructor{background:#111;padding:18px;border-radius:12px;text-align:center;box-shadow:0 8px 28px rgba(0,255,255,0.15);animation:reveal .6s both;}
+.instructor img{width:96px;height:96px;border-radius:50%;object-fit:cover;margin:0 auto 12px;box-shadow:0 10px 28px rgba(0,255,255,0.3);}
+.instructor h4{font-size:15px;margin-bottom:4px;color:#0ff;}
+.instructor p{font-size:13px;color:#ccc;}
+
+/* Testimonials */
+.testimonials{display:flex;gap:18px;overflow:hidden;align-items:stretch;}
+.testimonial{background:#111;padding:18px;border-radius:12px;min-width:320px;box-shadow:0 8px 28px rgba(0,255,255,0.15);animation:reveal .6s both;}
+.testimonial p{font-size:14px;color:#ccc;margin-bottom:12px;}
+.testimonial .who{font-weight:700;font-size:13px;color:#0ff;}
+
+/* Pricing */
+.pricing{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.price-card{border-radius:14px;padding:18px;background:#111;text-align:center;box-shadow:0 12px 36px rgba(0,255,255,0.15);transition:transform .28s,box-shadow .28s;animation:reveal .6s both;}
+.price-card:hover{transform:translateY(-10px);box-shadow:0 26px 60px rgba(0,255,255,0.4);}
+.price-card h3{margin-bottom:8px;color:#0ff;}
+.price{font-size:28px;font-weight:800;margin:12px 0;color:#0ff;}
+.price-card p{color:#ccc;}
+.price-card a.enroll{background:linear-gradient(90deg,#00ffff,#0ff);color:#000;}
+
+/* Contact form */
+.contact-grid{display:grid;grid-template-columns:1fr 420px;gap:22px;align-items:start;}
+form{background:#111;padding:18px;border-radius:12px;box-shadow:0 12px 36px rgba(0,255,255,0.15);}
+.field{position:relative;margin-bottom:14px;}
+.field input,.field textarea{width:100%;padding:14px 12px;border-radius:10px;border:1px solid #0ff;background:#0a0a0a;color:#fff;font-size:14px;outline:none;transition:box-shadow .18s,border-color .18s;}
+.field textarea{min-height:120px;resize:vertical;}
+.field label{position:absolute;left:12px;top:12px;background:transparent;padding:0 4px;color:#0ff;transition:transform .18s ease,font-size .18s ease,top .18s ease;pointer-events:none;}
+.field input:focus + label,.field textarea:focus + label,.field input:not(:placeholder-shown) + label,.field textarea:not(:placeholder-shown) + label{transform:translateY(-10px) scale(.88);font-size:12px;top:6px;color:#0ff;}
+.submit{display:inline-block;padding:10px 14px;background:linear-gradient(90deg,#00ffff,#0ff);color:#000;border-radius:10px;font-weight:700;border:none;cursor:pointer;box-shadow:0 12px 36px rgba(0,255,255,0.14);}
+
+/* Footer */
+footer{padding:30px 0;text-align:center;color:#ccc;}
+
+/* Responsive */
+@media(max-width:1000px){.courses-grid,.instructors,.pricing{grid-template-columns:repeat(2,1fr);}.contact-grid{grid-template-columns:1fr;}}
+@media(max-width:620px){.courses-grid,.instructors,.pricing{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <div class="brand">
+      <div class="logo">HC</div>
+      <h1>HackCourse</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#contact" class="cta">Join Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section id="home" class="hero">
+  <div class="media" aria-hidden>
+    <video autoplay muted loop playsinline></video>
+  </div>
+  <div class="overlay"></div>
+  <div class="container content">
+    <div class="left">
+      <h2>Launch your coding journey — courses built for hackathon success</h2>
+      <p>Short, practical courses on web dev, UI/UX, algorithms and project building — hands-on and fast.</p>
+      <div class="actions">
+        <a href="#courses" class="btn btn-primary">Explore Courses</a>
+        <a href="#contact" class="btn btn-ghost">Register</a>
+      </div>
+    </div>
+    <aside class="card">
+      <h3>Featured Track</h3>
+      <p>Full-stack sprint — build a deployable project in 2 weeks. Mentorship + templates included.</p>
+    </aside>
+  </div>
+</section>
+
+<section id="courses" class="site-section container">
+  <div class="section-title">Our Courses</div>
+  <div class="section-sub">Bite-sized lessons, project-focused learning — pick your track.</div>
+  <div class="courses-grid">
+    <article class="course"><div class="thumb">Web UI</div><h4>Modern HTML & CSS</h4><p>Hands-on responsive layouts, animations, and accessibility — build polished UIs without frameworks.</p><a class="enroll" href="#contact">Enroll</a></article>
+    <article class="course"><div class="thumb">JavaScript</div><h4>Interactive JavaScript</h4><p>Essential JS patterns,
