@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hover effect</title>
+    <style>
+
+        *{
+            padding: 0px;
+            margin: 0px;
+            font-family: "poppins";
+        }
+
+        body
+        {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        h1{
+            position: relative;
+            font-size: 100px;
+        }
+        h1::after{
+            left: 0;
+            top: 150px;
+            height: 5px;
+            position: absolute;
+            content: "";
+            width: 0;
+            transition: 0.5s;
+        }
+
+        h1:hover:after{
+            background: linear-gradient(90deg, #e41b1b, rgb(255, 240, 29), #38ff22);
+            width: 100%;
+
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hello</h1>
+</body>
+</html>
