@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 7</title>
+  </head>
+  <body>
+    <label for="elementId">Search element</label>
+    <input type="number" placeholder="enter number" id="elementId" />
+    <button onclick="searchElement()">Search</button>
+    <br /><br />
+    <label for="deleteElement">Delete element</label>
+    <input
+      type="number"
+      placeholder="Enter the element you want to delete"
+      id="deleteElement"
+    />
+    <button onclick="deleteElement()">Delete</button>
+
+    <script>
+      function searchElement() {
+        let arr = [
+          10, 23, 12, 14, 15, 6, 345, 85, 34, 853, 23, 3542, 2, 34, 32, 4, 34,
+        ];
+        let n = document.getElementById("elementId").value;
+        let size = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (parseInt(n) === arr[i]) {
+            console.log(`Value at index ${i}`);
+            break;
+          }
+          size++;
+        }
+        if (size == arr.length) {
+          console.log("Data not found");
+        }
+      }
+
+      function deleteElement() {
+        let arr = [
+          10, 23, 12, 14, 15, 6, 345, 85, 34, 853, 23, 3542, 2, 34, 32, 4, 34,
+        ];
+        let n = document.getElementById("deleteElement").value;
+        console.log(`Value that going to delete is: ${n} `)
+        console.log(`Befor deleting the size of arr: ${arr.length} \nelements are: ${arr}`);
+        for (let val = 0; val < arr.length; val++) {
+          if (arr[val] === parseInt(n)) {
+            arr.splice(val, 1);
+            console.log(
+              `Deleting value index is ${val}`
+            );
+          }
+        }
+        console.log(
+          `After deleting the size of arr: ${arr.length} \nelements are: ${arr}`
+        );
+      }
+    </script>
+  </body>
+</html>
