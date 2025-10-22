@@ -16,14 +16,15 @@
     <button onclick="deleteVal()">Delete</button>
 
     <script>
+      let data = [11, 22, 33, 44, 55, 66, 77, 88, 99,100];
       function insertEl() {
-        let data = [11, 22, 33, 44, 55, 66, 77, 88, 99];
         let newEl = document.getElementById("newEl").value;
         let position = document.getElementById("position").value;
-
+        newEl = parseInt(newEl);
+        position = parseInt(position);
         console.log("Before insert Length: ", data.length);
         for (let i = data.length - 1; i >= 0; i--) {
-          if (i >= position) {
+          if (i >= position && position >= 0) {
             data[i + 1] = data[i];
             if (i == position) {
               data[position] = newEl;
@@ -35,15 +36,15 @@
       }
 
       function deleteVal() {
-        let arr = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];
         let position = document.getElementById('del').value;
-        console.log(`Before length: ${arr.length}`);
-        for (let i = position; i < arr.length; i++) {
-          arr[i] = arr[i + 1];
+        position = parseInt(position);
+        console.log(`Before delete length: ${data.length}`);
+        for (let i = position; i < data.length; i++) {
+          data[i] = data[i+1];
         }
-        arr.length = arr.length - 1;
-        console.log(arr);
-        console.log(`After length: ${arr.length}`);
+        data.length = data.length - 1;
+        console.log(data);
+        console.log(`After delete length: ${data.length}`);
       }
     </script>
   </body>
