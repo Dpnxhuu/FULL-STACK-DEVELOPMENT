@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Day 10</title>
+  </head>
+  <body>
+    <h1>Day 10</h1>
+
+    <input type="text" id="factors" placeholder="Get factors of any number" />
+    <button onclick="factors()">Get Factors</button>
+    <br /><br />
+    <input type="text" id="prime" placeholder="Check prime number or not" />
+    <button onclick="primenumber()">Prime Number Check</button>
+
+    <script>
+      // factors of a Number -->
+      function factors() {
+        let n = document.getElementById("factors").value;
+        n = parseInt(n);
+        let arr = [];
+        let size = 0;
+        if (isNaN(n)) {
+          console.log("Invalid input");
+        } else {
+          if (n > 0) {
+            for (let i = 1; i <= n / 2; i++) {
+              if (n % i === 0) {
+                arr[size] = i;
+                size++;
+              }
+            }
+          } else {
+            console.log(n, "Number should be in +ve or greater than zero");
+          }
+          arr.push(n);
+          console.log(arr);
+        }
+      }
+      // find prime number -->
+      function primenumber() {
+        let n = document.getElementById("prime").value;
+        n = Number(n);
+        let count = 0;
+        // let arr = [];
+        // let size = 0;
+        if (n > 0 && n !== 1) {
+          let primehai = true;
+          for (let i = 2; i <= n / 2; i++) {
+            if (n % i === 0) {
+              // arr[size] = i;
+              // size++;
+              primehai = false;
+            }
+          }
+          console.log(primehai);
+          //   console.log(arr);
+        } else if (n === 1 || n === 0) {
+          console.log(
+            n,
+            "is not a prime number because prime number always have 2 factor 1 and itself"
+          );
+        } else if (isNaN(n)) {
+          console.log("Invalid input");
+        } else {
+          console.log(n, "The number should be in +ve or greater than zero");
+        }
+      }
+      // Lucky number game -->
+
+      // let random = Number(Math.floor(Math.random() * 10) + 1);
+      // let guess = -1;
+      // while (guess !== random) {
+      //   guess = Number(prompt("Enter your lucky number: "));
+      //   if (isNaN(guess) || guess < 1 || guess > 10) {
+      //     console.log("Enter a valid number between 1-10");
+      //   } else if (guess > random) {
+      //     console.log("Too high");
+      //   } else if (guess < random) {
+      //     console.log("Too low");
+      //   } else {
+      //     console.log("Congrats, You entered the right number that was", guess);
+      //   }
+      // }
+    </script>
+  </body>
+</html>
