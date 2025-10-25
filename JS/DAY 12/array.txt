@@ -1,0 +1,7 @@
+Learn how to reverse an array 
+how to find max and min and smax
+how to find min and sec minimum in an array
+how to separate zero left side and one right side in an array without using another array and using another array.
+
+--> learn some advance array concepts like:
+1.

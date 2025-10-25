@@ -1,0 +1,4 @@
+learn how to find prime number
+how to identify strong number 
+how to reverse a 4 digit number
+how to find sum to the number's digit.
