@@ -97,7 +97,7 @@ const prompt = require("prompt-sync")();
 // console.log(brr);
 
 // Q.6 put all the zero to the left section of the array and all the one to the right section of the array -->
-// let arr = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0];
+// let arr = [2,0,2,1,1,0];
 // let result = [];
 
 // let zero = 0;
@@ -253,22 +253,22 @@ const prompt = require("prompt-sync")();
 // console.log(temp);
 
 // Bubble sorting -->
-// let arr= [10,9,8,7,6,5,4,3,2,1];
+let arr= [2,0,2,1,1,0];
 
-// for(let i = 0; i <arr.length; i++)
-// {
-//   for(let j = i+1; j < arr.length; j++)
-//   {
-//     if(arr[i] > arr[j])
-//     {
-//       let temp = arr[i];
-//       arr[i] = arr[j];
-//       arr[j] = temp;
-//     }
-//   }
-// }
+for(let i = 0; i <arr.length; i++)
+{
+  for(let j = i+1; j < arr.length; j++)
+  {
+    if(arr[i] > arr[j])
+    {
+      let temp = arr[i];
+      arr[i] = arr[j];
+      arr[j] = temp;
+    }
+  }
+}
 
-// console.log(arr);
+console.log(arr);
 
 // merge two array in place-->
 // let arr1 = [-1, 0, 0, 3, 3, 3, 0, 0, 0];
@@ -320,27 +320,61 @@ const prompt = require("prompt-sync")();
 
 // console.log(result);
 
-
 // best time to buy and sell stock -->
 
-let arr = [7,1,5,3,6,4];
-let max = 0;
-let min = arr[0];
-let profit = 0;
-for(let i = 0 ; i < arr.length; i++)
-{
-  if(arr[i] < min)
-  {
-    min = arr[i];
-  }
-  else{
-    profit = arr[i]-min;
-  }
-  if(profit > max)
-  {
-    max =profit;
-  }
-}
+// let arr = [7,1,5,3,6,4];
+// let max = 0;
+// let min = arr[0];
+// let profit = 0;
+// for(let i = 0 ; i < arr.length; i++)
+// {
+//   if(arr[i] < min)
+//   {
+//     min = arr[i];
+//   }
+//   else{
+//     profit = arr[i]-min;
+//   }
+//   if(profit > max)
+//   {
+//     max =profit;
+//   }
+// }
 
-if(max > 0) console.log(max);
-else console.log("0");
+// if(max > 0) console.log(max);
+// else console.log("0");
+
+// sort colors -->
+
+// let arr = [2, 0, 2, 1, 1, 0];
+// let result = [];
+
+// let zero = 0;
+// let one = 0;
+// let two = 0;
+
+// for (let i = 0; i < arr.length; i++) {
+//   if (arr[i] === 0) {
+//     zero++;
+//   } else if (arr[i] === 1) {
+//     one++;
+//   } else if (arr[i] === 2) {
+//     two++;
+//   }
+// }
+
+// for (let i = 0; i < zero; i++) {
+//   result.push(0);
+// }
+
+// for (let i = 0; i < one; i++) {
+//   result.push(1);
+// }
+
+// for (let i = 0; i < two; i++) {
+//   result.push(2);
+// }
+
+// console.log(result);
+
+// video -8, part - 6 stop at 1:30:52 / 2:12:39
