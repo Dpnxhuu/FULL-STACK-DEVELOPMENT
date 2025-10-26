@@ -196,20 +196,151 @@ const prompt = require("prompt-sync")();
 // }
 
 // For right rotation -->
-let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-let k = Number(prompt("Enter value of k: "));
-k = k % arr.length;
-Reverse(0, arr.length - 1);
-Reverse(0, k - 1);
-Reverse(k, arr.length - 1);
-console.log(arr);
+// let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let k = Number(prompt("Enter value of k: "));
+// k = k % arr.length;
+// Reverse(0, arr.length - 1);
+// Reverse(0, k - 1);
+// Reverse(k, arr.length - 1);
+// console.log(arr);
 
-function Reverse(i, j) {
-  while (i <= j) {
-    let temp = arr[i];
-    arr[i] = arr[j];
-    arr[j] = temp;
-    i++;
-    j--;
+// function Reverse(i, j) {
+//   while (i <= j) {
+//     let temp = arr[i];
+//     arr[i] = arr[j];
+//     arr[j] = temp;
+//     i++;
+//     j--;
+//   }
+// }
+
+// Leetcode question 1 -->
+// let arr= [0,0,0,1,1,1,1,2,2,2,3,4,4,4,5,6,6,6,7,7];
+// let j =1;
+// for(let i = 0; i < arr.length-1; i++)
+// {
+//   if(arr[i] !== arr[i+1])
+//   {
+//     arr[j] = arr[i+1];
+//     j++;
+//   }
+// }
+// console.log(arr);
+// console.log(j);
+
+// Leetcode question 2 -->
+
+// let arr = [1,5,9,11,14];
+// let brr = [2,3,6,7,8,10,22,23];
+
+// let temp = new Array(arr.length + brr.length);
+// let i = (j = k = 0);
+// while (i < arr.length && j < brr.length) {
+//   if (arr[i] < brr[j]) {
+//     temp[k++] = arr[i++];
+//   } else {
+//     temp[k++] = brr[j++];
+//   }
+// }
+
+// while (j < brr.length) {
+//   temp[k++] = brr[j++];
+// }
+// while (i < arr.length) {
+//   temp[k++] = arr[i++];
+// }
+
+// console.log(temp);
+
+// Bubble sorting -->
+// let arr= [10,9,8,7,6,5,4,3,2,1];
+
+// for(let i = 0; i <arr.length; i++)
+// {
+//   for(let j = i+1; j < arr.length; j++)
+//   {
+//     if(arr[i] > arr[j])
+//     {
+//       let temp = arr[i];
+//       arr[i] = arr[j];
+//       arr[j] = temp;
+//     }
+//   }
+// }
+
+// console.log(arr);
+
+// merge two array in place-->
+// let arr1 = [-1, 0, 0, 3, 3, 3, 0, 0, 0];
+// let arr2 = [1, 2, 2];
+
+// for (let i = 0; i < arr2.length; i++) {
+//   arr1.pop();
+// }
+
+// let result = [];
+
+// while (arr1.length && arr2.length) {
+//   const next = arr1[0] < arr2[0] ? arr1.shift() : arr2.shift();
+//   result.push(next);
+// }
+
+// if (arr1.length) {
+//   result = result.concat(arr1);
+// } else if (arr2.length) {
+//   result = result.concat(arr2);
+// }
+
+// arr1.splice(0, arr1.length, ...result);
+
+// console.log(arr1);
+
+// console.log(result);
+
+// Merging two sorted array new approach with extra space best approach -->
+// let arr1 = [-1,0,0,3,3,3,0,0,0];
+// let arr2 = [1,2,2];
+
+// let result = []
+
+// while(arr1.length && arr2.length)
+// {
+//   const next = arr1[0] < arr2[0]? arr1.shift() : arr2.shift();
+//   result.push(next);
+// }
+
+// if(arr1.length)
+// {
+//   result = result.concat(arr1);
+// }
+// else if(arr2.length)
+// {
+//   result = result.concat(arr2);
+// }
+
+// console.log(result);
+
+
+// best time to buy and sell stock -->
+
+let arr = [7,1,5,3,6,4];
+let max = 0;
+let min = arr[0];
+let profit = 0;
+for(let i = 0 ; i < arr.length; i++)
+{
+  if(arr[i] < min)
+  {
+    min = arr[i];
+  }
+  else{
+    profit = arr[i]-min;
+  }
+  if(profit > max)
+  {
+    max =profit;
   }
 }
+
+if(max > 0) console.log(max);
+else console.log("0");

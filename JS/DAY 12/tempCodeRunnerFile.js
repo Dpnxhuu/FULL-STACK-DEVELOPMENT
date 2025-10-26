@@ -1,0 +1,1 @@
+ // profit = arr[i]-min;
