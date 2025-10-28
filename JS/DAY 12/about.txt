@@ -4,4 +4,9 @@ how to find min and sec minimum in an array
 how to separate zero left side and one right side in an array without using another array and using another array.
 
 --> learn some advance array concepts like:
-1.
+1.Bubble sorting
+2.merge two array in place
+3.Merging two sorted array new approach with extra space best approach
+4.best time to buy and sell stock - dsa question
+5.sort colors - DSA question
+Move all zeros to left side

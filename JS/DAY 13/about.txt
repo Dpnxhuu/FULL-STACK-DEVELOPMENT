@@ -1,0 +1,3 @@
+Question practiced:- 
+Q.1 Maximum subbarray
+Q.2 Majority element

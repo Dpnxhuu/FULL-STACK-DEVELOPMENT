@@ -1,1 +1,2 @@
 learn how to search any element that are present or not in an array.
+Linear search

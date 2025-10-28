@@ -1,0 +1,5 @@
+Questions solved:-
+Q.1 Print all character in separate line
+Q.2 Palindrome string 
+Q.3 Toggle each character
+Q.4 Frequency of each character
