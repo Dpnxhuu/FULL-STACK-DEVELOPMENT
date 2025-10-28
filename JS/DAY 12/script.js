@@ -1,3 +1,4 @@
+// Date 26/10/2025
 const prompt = require("prompt-sync")();
 
 // let n = prompt("Enter anything: ");
@@ -376,5 +377,3 @@ console.log(arr);
 // }
 
 // console.log(result);
-
-// video -8, part - 6 stop at 1:30:52 / 2:12:39
