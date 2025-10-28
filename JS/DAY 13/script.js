@@ -35,3 +35,4 @@ const prompt = require("prompt-sync")();
 // console.log(ans);
 
 // Q.3 Trapping Rain Water (hard) -->
+// pending
