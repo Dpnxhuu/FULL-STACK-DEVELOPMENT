@@ -254,7 +254,7 @@ const prompt = require("prompt-sync")();
 // console.log(temp);
 
 // Bubble sorting -->
-let arr= [2,0,2,1,1,0];
+let arr= [23,234,5,3,2,1,45245,2,4,3,5,34,3,45,3,];
 
 for(let i = 0; i <arr.length; i++)
 {
