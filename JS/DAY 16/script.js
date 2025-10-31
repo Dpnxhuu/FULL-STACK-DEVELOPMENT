@@ -167,4 +167,3 @@ for(let i = Math.floor(Math.sqrt(n)); i >= 1; i--)
     }
 }
 
-// VIDEO PART 11 STOP AT 1:09
