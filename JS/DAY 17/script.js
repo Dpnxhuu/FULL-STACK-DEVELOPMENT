@@ -62,35 +62,36 @@ const prompt = require("prompt-sync")();
 
 // Q. Binarry search -->
 
-// let arr = [2,4,5,6,7,8,9];
-// let found = false;
-// let target = Number(prompt("Enter target:"));
-// let first = 0;
-// let end = arr.length-1;
-// let mid = Math.floor((first + end)/2);
-// while(first <= end)
-// {
-//    if(target===arr[mid])
-//    {
-//     console.log(mid);
-//     found = true;
-//     break;
-//    }
-//    else if (target < arr[mid])
-//    {
-//     end = mid-1;
-//    }
-//    else if(target > arr[mid])
-//    {
-//     first = mid+1;
-//    }
-//    mid = Math.floor((first + end)/2);
-// }
-
-// if(!found)
-// {
-//   console.log("Data not found");
-// }
+let arr = [1,3,5,6];
+let found = false;
+let target = Number(prompt("Enter target:"));
+let first = 0;
+let end = arr.length-1;
+let mid = Math.floor((first + end)/2);
+while(first <= end)
+{
+   if(target===arr[mid])
+   {
+    console.log(mid);
+    found = true;
+    break;
+   }
+   else if (target < arr[mid])
+   {
+    end = mid-1;
+   }
+   else if(target > arr[mid])
+   {
+    first = mid+1;
+   }
+   mid = Math.floor((first + end)/2);
+}
+// console.log(first,end);
+if(!found)
+{
+   if(end > first) console.log(end);
+       else console.log(first);
+}
 
 // merge sort -->
 // function mergeSort(arr) {

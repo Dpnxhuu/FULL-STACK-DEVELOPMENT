@@ -1,0 +1,3 @@
+learn binary search
+solve a leetcode problem power(x,n);
+learn merge sort
