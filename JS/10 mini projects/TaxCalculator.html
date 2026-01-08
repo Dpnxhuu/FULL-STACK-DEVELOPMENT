@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    body{
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+    }
+    #container {
+      background-color: rgba(255, 188, 101, 0.799);
+      border: 5px solid black;
+      padding: 50px;
+      font-size: 20px;
+    }
+  </style>
+  <body>
+    <h1>Tax Calculator</h1>
+    <div id="container">
+      <label>
+        Income:
+        <input type="text" name="username" id="income"/>
+      </label>
+      <button type="submit">Calculate</button>
+        <p id="tax">Total  tax: </p>
+    </div>
+    <script src="./taxCalculator.js"></script>
+  </body>
+</html>
