@@ -8,9 +8,9 @@ const myInfo ={
 };
 
 const DataInJsonFormat = JSON.stringify(myInfo);
-
 console.log(DataInJsonFormat);
 
-const jsonToJsObject = JSON.parse(DataInJsonFormat);
+//Json to js object
 
+const jsonToJsObject = JSON.parse(DataInJsonFormat);
 console.log(jsonToJsObject);
