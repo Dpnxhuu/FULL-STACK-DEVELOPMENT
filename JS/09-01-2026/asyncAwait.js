@@ -17,7 +17,7 @@
 
 // async function github() {
 //   try {
-//     const response = await fetch("https://api.github.com/users");
+    // const response = await fetch("https://api.github.com/users");
 //     var json = await response.json();
 
 //     if(!response.ok){

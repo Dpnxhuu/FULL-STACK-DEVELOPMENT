@@ -1,13 +1,14 @@
-
 #include <iostream>
-using namespace std;
-int  main() {
+using namespace std; 
 
-int age = 29;
-cout << age << endl;
-char grade = 'B';
-float PI = 3.1;
-cout << PI << endl;
-cout << grade << endl;
+int main() {
+  
+   int A = 5 , B = 3;
+   cout <<" sum : " << (A+B) << endl;
+   cout << " difference " << (A-B) << endl;
+   cout << "multiply : " << (A*B) << endl;
+   cout << "division : " << (B/A) << endl;
+
+
 
 }
