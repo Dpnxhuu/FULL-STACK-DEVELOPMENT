@@ -12,4 +12,4 @@ import App from './App.jsx'
 //   );
 // }
 createRoot(document.getElementById("root")).render(<App />);
-console.log("hello")
+console.log(<App/>)
