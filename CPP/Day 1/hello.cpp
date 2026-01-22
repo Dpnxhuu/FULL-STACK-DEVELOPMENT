@@ -3,12 +3,16 @@ using namespace std;
 
 int main() {
   
-   int A = 5 , B = 3;
-   cout <<" sum : " << (A+B) << endl;
-   cout << " difference " << (A-B) << endl;
-   cout << "multiply : " << (A*B) << endl;
-   cout << "division : " << (B/A) << endl;
+   int a = 11 , b = 5;
+
+   //cout << ((3>1) && (4>2) && (3>1)) << endl;
+
+    
+   float age = (3/(double)2) ;
+   cout << age << endl;
 
 
 
-}
+
+
+} 
