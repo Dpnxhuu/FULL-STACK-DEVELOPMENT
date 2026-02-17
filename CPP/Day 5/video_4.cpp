@@ -2,19 +2,12 @@
 using namespace std;
 
 
-// sum of n 
-
-double sumn(double n){
-    double sum = 1;
-    for(double i = 1; i<=n; i++){
-        sum*=i;
-   
-    }
-    return sum;
-
+int Fx(int b){
     
-}
-int main(){
-    cout << sumn(5)<< endl;
+    int i = 5;
+    int n = 10;
+    
+
 
 }
+
