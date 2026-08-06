@@ -1,14 +1,56 @@
-"use client"
+"use client";
 import Link from "next/link";
 import { AuthCard } from "@/components/auth/AuthCard";
 import { AuthDivider } from "@/components/auth/AuthDivider";
 import { GoogleAuthButton } from "@/components/auth/GoogleAuthButton";
 import { Button } from "@/components/ui/Button";
-import { useState } from "react";
+import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Eye, EyeOff } from "lucide-react";
+import axios from "axios";
+import { z } from "zod";
+
+// interface Form {
+//   email: string;
+//   password: string;
+// }
+
+const loginSchema = z.object({
+  email: z.string().email("Invalid email"),
+  password: z.string().min(8, "Password is too short"),
+});
+
+type Form = z.infer<typeof loginSchema>;
 
 export default function LoginPage() {
+  const [show, setShow] = useState<boolean>(false);
+  const [form, setForm] = useState<Form>({
+    email: "",
+    password: "",
+  });
+  const [loading, setLoading] = useState<boolean>(false);
+  const router = useRouter();
+
+  const handleLogin = async () => {
+    const result = loginSchema.safeParse(form);
+
+    if (!result.success) {
+      alert(result.error.issues[0]?.message);
+      return;
+    }
+
+    setLoading(true);
+    try {
+      await axios.post("/api/auth/login", result.data);
+      router.push("/home");
+    } catch (error) {
+      if (axios.isAxiosError(error)) {
+        alert(error.response?.data?.error || "Something went wrong!");
+      }
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <AuthCard
@@ -41,7 +83,10 @@ export default function LoginPage() {
             placeholder="you@example.com"
             className="input-field"
             autoComplete="email"
-            
+            value={form.email}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setForm({ ...form, email: e.target.value })
+            }
           />
         </div>
 
@@ -62,24 +107,35 @@ export default function LoginPage() {
           </div>
           <div className="relative">
             <input
+              type={show ? "text" : "password"}
               id="password"
               name="password"
               placeholder="••••••••"
               className="input-field pr-10"
               autoComplete="current-password"
+              value={form.password}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                setForm({ ...form, password: e.target.value })
+              }
             />
             <button
               type="button"
-              
-              className="absolute right-3 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white"
+              onClick={() => setShow(!show)}
+              className="absolute right-5 top-1/2 -translate-y-1/2 text-zinc-400 hover:text-white"
             >
-              {false ? <Eye size={16} /> : <EyeOff size={16} />}
+              {show ? <Eye size={16} /> : <EyeOff size={16} />}
             </button>
           </div>
         </div>
 
-        <Button  variant="primary" size="lg" className="w-full">
-         Sign in
+        <Button
+          onClick={handleLogin}
+          disabled={loading}
+          variant="primary"
+          size="lg"
+          className="w-full"
+        >
+          {loading ? "Signing in..." : "Sign in"}
         </Button>
 
         <AuthDivider />

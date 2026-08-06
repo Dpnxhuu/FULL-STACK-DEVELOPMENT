@@ -3,17 +3,27 @@ import { prisma } from "@/lib/prisma";
 import bcrypt from "bcryptjs";
 import jwt from "jsonwebtoken";
 import nodemailer from "nodemailer";
+import { z } from "zod";
+
+const signupSchema = z.object({
+  name: z.string().min(2, "Name too short"),
+  email: z.string().email("Invalid email"),
+  password: z.string().min(8, "Password must be 8+ chars"),
+});
 
 export async function POST(req: Request) {
   try {
-    const { name, email, password } = await req.json();
+    const body = await req.json();
+    const result = signupSchema.safeParse(body);
 
-    if (!name || !email || !password) {
+    if (!result.success) {
       return NextResponse.json(
-        { error: "All fields are required" },
+        { error: result.error.issues[0]?.message },
         { status: 400 }
       );
     }
+
+    const { name, email, password } = result.data;
 
     const existingUser = await prisma.user.findUnique({ where: { email } });
     if (existingUser) {
@@ -30,12 +40,12 @@ export async function POST(req: Request) {
     });
 
     const verifyToken = jwt.sign(
-      { id: newUser.id },
+      { id: newUser.id},
       process.env.JWT_SECRET!,
       { expiresIn: "1d" }
     );
 
-    const verifyLink = `${process.env.APP_URL}/api/auth/verify?token=${verifyToken}`;
+    const verifyLink = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/verify?token=${verifyToken}`;
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -46,7 +56,7 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: process.env.GMAIL_USER,
+      from: `Verify ${process.env.GMAIL_USER}`,
       to: newUser.email,
       subject: "Verify your email",
       html: `<p>Hi ${newUser.name}, click below to verify your account:</p>

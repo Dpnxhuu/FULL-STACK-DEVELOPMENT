@@ -1,6 +1,11 @@
 import { NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
 import jwt from "jsonwebtoken";
+import { z } from "zod";
+
+const tokenSchema = z.object({
+  id: z.number(),
+});
 
 export async function GET(req: Request) {
   const { searchParams } = new URL(req.url);
@@ -11,19 +16,40 @@ export async function GET(req: Request) {
   }
 
   try {
-    const decoded = jwt.verify(token, process.env.JWT_SECRET!) as { id: number, name: string, email: string };
+    const decoded = tokenSchema.parse(
+      jwt.verify(token, process.env.JWT_SECRET!),
+    );
 
-    await prisma.user.update({
+    const dbUser = await prisma.user.update({
       where: { id: decoded.id },
       data: { isVerified: true },
     });
 
-    return NextResponse.redirect(new URL("/home", req.url));
+    const loginToken = jwt.sign(
+      {
+        id: dbUser.id,
+        tokenVersion: dbUser.tokenVersion,
+      },
+      process.env.JWT_SECRET!,
+      { expiresIn: "7d" },
+    );
+
+    const response = NextResponse.redirect(new URL("/home", req.url));
+
+    response.cookies.set("token", loginToken, {
+      httpOnly: true,
+      secure: process.env.NODE_ENV === "production",
+      sameSite: "strict",
+      maxAge: 7 * 24 * 60 * 60,
+      path: "/",
+    });
+
+    return response;
   } catch (error) {
     console.error(error);
     return NextResponse.json(
       { error: "Invalid or expired token" },
-      { status: 400 }
+      { status: 400 },
     );
   }
 }

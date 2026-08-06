@@ -1,4 +1,12 @@
-export function AuthCard({ title, subtitle, children, footer }) {
+
+interface AuthProp {
+  title: string,
+  subtitle: string, 
+  children: React.ReactNode,
+  footer: React.ReactNode,
+}
+
+export function AuthCard({ title, subtitle, children, footer }: AuthProp) {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-4 py-16">
       <div

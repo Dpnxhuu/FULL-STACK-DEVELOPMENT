@@ -1,29 +1,42 @@
 "use client";
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import { z } from "zod";
 import { AuthCard } from "../../../components/auth/AuthCard";
 import { AuthDivider } from "../../../components/auth/AuthDivider";
 import { GoogleAuthButton } from "../../../components/auth/GoogleAuthButton";
 import { Button } from "../../../components/ui/Button";
 import axios from "axios";
 
-interface Form {
-  name: string;
-  email: string;
-  password: string;
-  confirmPassword: string;
-}
+// interface Form {
+//   name: string;
+//   email: string;
+//   password: string;
+//   confirmPassword: string;
+// }
 
-export function VerificationSent({ email }: {email: string}) {
+const signupSchema = z
+  .object({
+    name: z.string().min(3, "Name too short"),
+    email: z.string().email("Invalid email"),
+    password: z.string().min(8, "Password must be 8+ chars"),
+    confirmPassword: z.string(),
+  })
+  .refine((data) => data.password === data.confirmPassword, {
+    message: "Password does not matching!",
+    path: ["confirmPassword"],
+  });
+
+  type Form = z.infer<typeof signupSchema>;
+
+export function VerificationSent({ email }: { email: string }) {
   return (
     <div className="dark-page app-gradient min-h-screen flex items-center justify-center px-4">
       <div className="glass-panel rounded-2xl p-8 max-w-md w-full text-center">
-        {/* Icon */}
         <div className="flex h-14 w-14 items-center justify-center rounded-full bg-accent/10 ring-1 ring-accent/20 mx-auto mb-5">
           <span className="text-2xl">✉️</span>
         </div>
 
-        {/* Text */}
         <p className="section-label mb-2">Almost there</p>
         <h2 className="text-lg font-semibold mb-2">Verify your email</h2>
         <p className="text-sm text-muted mb-1">
@@ -36,16 +49,6 @@ export function VerificationSent({ email }: {email: string}) {
           Click the link in the email to activate your account. The link will
           expire in 24 hours.
         </p>
-
-        {/* Resend */}
-        {/* <div className="border-t border-border/40 pt-5">
-          <p className="text-xs text-muted/60">
-            Didn't receive the email?{" "}
-            <button className="text-accent hover:text-accent/80 transition-colors font-medium">
-              Resend verification email
-            </button>
-          </p>
-        </div> */}
       </div>
     </div>
   );
@@ -58,26 +61,23 @@ export default function SignupEmailPage() {
     password: "",
     confirmPassword: "",
   });
-  const [reso, setReso] = useState<boolean>(false);
-  // const [error, setError] = useState<boolean>(false);
+  const [respo, setRespo] = useState<boolean>(false);
   const [loading, setLoading] = useState<boolean>(false);
 
   const handleSingUp = async () => {
-    if (!form.name || !form.email || !form.password || !form.confirmPassword) {
-      alert("please fill all the fields");
-      return;
-    }
+    const result = signupSchema.safeParse(form);
 
-    if(form.password !== form.confirmPassword){
-      alert("Password does not macthing!")
+    if (!result.success) {
+      const firstError = result.error.issues[0]?.message;
+      alert(firstError);
       return;
     }
 
     setLoading(true);
     try {
-      const res = await axios.post("/api/auth/signup/", form);
-      console.log(res.data.message);
-      setReso(true);
+      await axios.post("/api/auth/signup/", result.data);
+      // console.log(res.data.message);
+      setRespo(true);
     } catch (err) {
       if (axios.isAxiosError(err)) {
         alert(err.response?.data?.error);
@@ -87,7 +87,7 @@ export default function SignupEmailPage() {
     }
   };
 
-  if (reso) {
+  if (respo) {
     return <VerificationSent email={form.email} />;
   }
 
