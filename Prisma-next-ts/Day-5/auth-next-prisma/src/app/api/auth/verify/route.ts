@@ -4,7 +4,8 @@ import jwt from "jsonwebtoken";
 import { z } from "zod";
 
 const tokenSchema = z.object({
-  id: z.number(),
+      name: z.string(),
+      email: z.string().email(),
 });
 
 export async function GET(req: Request) {
@@ -20,15 +21,23 @@ export async function GET(req: Request) {
       jwt.verify(token, process.env.JWT_SECRET!),
     );
 
-    const dbUser = await prisma.user.update({
-      where: { id: decoded.id },
-      data: { isVerified: true },
+    const dbUser = await prisma.user.findFirst({
+      where: {email: decoded.email, verify_token: token}
+    })
+
+    if(!dbUser){
+      return NextResponse.json({error: "Invalid or already used link"},{status: 400})
+    };
+
+    const updatedUser = await prisma.user.update({
+      where: { id: dbUser.id },
+      data: { isVerified: true, verify_token: null },
     });
 
     const loginToken = jwt.sign(
       {
-        id: dbUser.id,
-        tokenVersion: dbUser.tokenVersion,
+        id: updatedUser.id,
+        tokenVersion: updatedUser.tokenVersion,
       },
       process.env.JWT_SECRET!,
       { expiresIn: "7d" },
@@ -39,7 +48,7 @@ export async function GET(req: Request) {
     response.cookies.set("token", loginToken, {
       httpOnly: true,
       secure: process.env.NODE_ENV === "production",
-      sameSite: "strict",
+      sameSite: "lax",
       maxAge: 7 * 24 * 60 * 60,
       path: "/",
     });

@@ -6,7 +6,7 @@ import nodemailer from "nodemailer";
 import { z } from "zod";
 
 const signupSchema = z.object({
-  name: z.string().min(2, "Name too short"),
+  name: z.string().min(3, "Name too short"),
   email: z.string().email("Invalid email"),
   password: z.string().min(8, "Password must be 8+ chars"),
 });
@@ -35,15 +35,15 @@ export async function POST(req: Request) {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = await prisma.user.create({
-      data: { name, email, password: hashedPassword },
-    });
-
     const verifyToken = jwt.sign(
-      { id: newUser.id},
+      { name, email},
       process.env.JWT_SECRET!,
       { expiresIn: "1d" }
     );
+
+    const newUser = await prisma.user.create({
+      data: { name, email, password: hashedPassword, verify_token: verifyToken },
+    });
 
     const verifyLink = `${process.env.NEXT_PUBLIC_APP_URL}/api/auth/verify?token=${verifyToken}`;
 
@@ -56,7 +56,7 @@ export async function POST(req: Request) {
     });
 
     await transporter.sendMail({
-      from: `Verify ${process.env.GMAIL_USER}`,
+      from: `"Verify" <${process.env.GMAIL_USER}>`,
       to: newUser.email,
       subject: "Verify your email",
       html: `<p>Hi ${newUser.name}, click below to verify your account:</p>

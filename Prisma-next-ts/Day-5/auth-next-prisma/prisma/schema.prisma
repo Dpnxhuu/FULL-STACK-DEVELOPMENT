@@ -20,5 +20,6 @@ model User{
   isVerified Boolean  @default(false)
   tokenVersion Int @default(0)
   password_reset_token String?
+  verify_token String?
   createdAt DateTime @default(now())
 }
