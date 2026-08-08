@@ -44,7 +44,7 @@ export default function ForgotPasswordForm() {
         subtitle={`Reset link sent to ${email}`}
         footer={
           <Link
-            href="/login"
+            href="/"
             className="cursor-default font-medium text-violet-400 transition-colors hover:text-violet-300"
           >
             Back to login

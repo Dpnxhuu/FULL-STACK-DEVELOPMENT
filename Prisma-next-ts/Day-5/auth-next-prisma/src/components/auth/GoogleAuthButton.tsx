@@ -1,3 +1,5 @@
+"use client";
+
 export function GoogleIcon({ className = "h-5 w-5" }) {
   return (
     <svg className={className} viewBox="0 0 24 24" aria-hidden>
@@ -21,10 +23,17 @@ export function GoogleIcon({ className = "h-5 w-5" }) {
   );
 }
 
-export function GoogleAuthButton({ label = "Sign in with Google" }) {
+export function GoogleAuthButton({ label }: { label: string }) {
+  const handleGoogleLogin = () => {
+    const googleAuthUrl = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID}&redirect_uri=${process.env.NEXT_PUBLIC_APP_URL}/api/auth/google/callback&response_type=code&scope=openid email profile`;
+
+    window.location.href = googleAuthUrl;
+  };
+
   return (
     <button
       type="button"
+      onClick={handleGoogleLogin}
       className="flex w-full cursor-default items-center justify-center gap-3 rounded-xl border border-white/10 bg-zinc-950 px-6 py-3 text-base font-semibold text-white transition-all duration-300 hover:border-white/20 hover:bg-zinc-900"
     >
       <GoogleIcon />

@@ -43,13 +43,15 @@ export async function POST(req: Request) {
       );
     }
 
-    const compare = await bcrypt.compare(pass, user.password);
+    if (user.password) {
+      const compare = await bcrypt.compare(pass, user.password);
 
-    if (compare) {
-      return NextResponse.json(
-        { error: "New password can't be same as old password!" },
-        { status: 401 },
-      );
+      if (compare) {
+        return NextResponse.json(
+          { error: "New password can't be same as old password!" },
+          { status: 401 },
+        );
+      }
     }
 
     const hashedPass = await bcrypt.hash(pass, 10);

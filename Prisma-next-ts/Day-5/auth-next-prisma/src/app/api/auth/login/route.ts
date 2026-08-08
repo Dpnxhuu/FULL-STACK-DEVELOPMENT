@@ -17,7 +17,7 @@ export async function POST(req: Request) {
     if (!result.success) {
       return NextResponse.json(
         { error: result.error.issues[0]?.message },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -27,7 +27,17 @@ export async function POST(req: Request) {
     if (!user) {
       return NextResponse.json(
         { error: "Invalid email or password" },
-        { status: 400 }
+        { status: 400 },
+      );
+    }
+
+    if (!user.password) {
+      return NextResponse.json(
+        {
+          error:
+            "This account uses Google Sign-In. Please use 'Sign in with Google' or reset your password.",
+        },
+        { status: 400 },
       );
     }
 
@@ -35,26 +45,26 @@ export async function POST(req: Request) {
     if (!isMatch) {
       return NextResponse.json(
         { error: "Invalid email or password" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
     if (!user.isVerified) {
       return NextResponse.json(
         { error: "Please verify your email before logging in" },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
     const token = jwt.sign(
-      { id: user.id, tokenVersion: user.tokenVersion},
+      { id: user.id, tokenVersion: user.tokenVersion },
       process.env.JWT_SECRET!,
-      { expiresIn: "7d" }
+      { expiresIn: "7d" },
     );
 
     const response = NextResponse.json(
-      { message: "Login successfully!"},
-      { status: 200 }
+      { message: "Login successfully!" },
+      { status: 200 },
     );
 
     response.cookies.set("token", token, {
@@ -70,7 +80,7 @@ export async function POST(req: Request) {
     console.error(error);
     return NextResponse.json(
       { error: "Something went wrong" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
