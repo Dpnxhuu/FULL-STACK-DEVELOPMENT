@@ -35,6 +35,10 @@ export async function POST(req: Request) {
       );
     }
 
+    if(!user.emailVerified){
+      return NextResponse.json({error: "Email not verified!"},{status: 401})
+    }
+
     const isMatch = await bcrypt.compare(password, user.password!);
     if (!isMatch) {
       return NextResponse.json(

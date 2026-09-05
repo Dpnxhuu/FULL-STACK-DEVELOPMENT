@@ -8,7 +8,7 @@ import axios from "axios";
 
 const loginSchema = z.object({
   email: z.string().email("Enter a valid email!"),
-  password: z.string().min(6, "Password too short!"),
+  password: z.string().min(6, "Invalid password!"),
 });
 
 type loginType = z.infer<typeof loginSchema>;
@@ -25,13 +25,13 @@ export default function LoginPage() {
   const verified = searchParams.get("verified");
   const router = useRouter();
 
-  const handleSubmit = async (e:SubmitEvent) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const result = loginSchema.safeParse(loginData);
 
     if (!result.success) {
-      alert(result.error.issues[0]?.message);
+      setError(result.error.issues[0]?.message);
       return;
     }
 
@@ -44,8 +44,8 @@ export default function LoginPage() {
       router.push("/home");
     } catch (error) {
       if (axios.isAxiosError(error)) {
-        alert(error.response?.data?.error);
-        setError(error.response?.data?.console.error);
+        // alert(error.response?.data?.error);
+        setError(error.response?.data?.error);
       }
     } finally {
       setLoading(false);
