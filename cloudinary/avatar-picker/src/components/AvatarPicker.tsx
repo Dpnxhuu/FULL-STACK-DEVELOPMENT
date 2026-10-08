@@ -23,6 +23,8 @@ export default function AvatarPicker() {
 
     setFile(selectedFile);
     setPreview(URL.createObjectURL(selectedFile));
+
+    handleUpload();
   };
 
   const handleUpload = async () => {
